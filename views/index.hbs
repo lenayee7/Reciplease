@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="RecipeApp">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/">
+	
+	<!-- STYLESHEETS -->
+  <!-- <link rel="stylesheet" href="./bower_component/bootstrap-css-only/css/bootstrap.css"/> -->
+  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/recipebox.css"/>
+
+  <!-- font awesome -->
+  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+
+  <!-- GOOGLE FONTS -->
+   <link href='https://fonts.googleapis.com/css?family=Droid+Sans|PT+Sans|Pacifico|Open+Sans|Ubuntu|Titillium+Web' rel='stylesheet' type='text/css'>
+  
+  <!-- ANGULAR -->
+<!-- 	<script src="../bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.min.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script> -->
+
+
+  <!-- angular -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+
+  <!-- ui router -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+
+  <!-- ngResource -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-resource.js"></script>
+
+   <!-- Satellizer CDN -->
+  <script src="//cdn.jsdelivr.net/satellizer/0.14.0/satellizer.min.js"></script>
+
+	<!-- CUSTOM SCRIPT(ANGULAR APP) -->
+	<script type="text/javascript" src="javascripts/app.js"></script>
+	<!-- <script type="text/javascript" src="./js/homeController.js"></script> -->
+
+
+	<title>Precipes</title>
+
+
+</head>
+<body ng-controller="MainController as main">
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" aria-haspopup="true">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a id="precipeLink"class="navbar-brand" href="/">Precipes</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="/api/recipes">Recipe Land</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li ng-show="!main.currentUser()"><a ui-sref="signup">Sign Up</a></li>
+          <li ng-show="!main.currentUser()"><a ui-sref="login">Log In</a></li>
+          <li><a href="/api/recipes/:id">Recipe Box</a></li>
+          <li ng-show="main.currentUser()"><a ui-sref="profile">\{{main.currentUser().fullname}}</a></li>
+          <li ng-show="main.currentUser()"><a ui-sref="logout">Log Out</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container text-center">
+    <div class="row col-md-12 col">
+     <!--  <div class="col-md-6 col-md-offset-3"> -->
+        <ui-view>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

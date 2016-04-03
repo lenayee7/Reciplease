@@ -1,0 +1,53 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3>{{main.currentUser().fullname}}</h3>
+<hr>
+<p><strong>Username:</strong> {{main.currentUser().username}}</p>
+<p><strong>Email:</strong> {{main.currentUser().email}}</p>
+<p><strong>Joined:</strong> {{main.currentUser().created | date:'MMM dd, yyyy'}}</p>
+<!-- <p><strong>Posts:</strong> {{main.currentUser().posts.length}}</p> -->
+
+<hr>
+<a href="#" ng-click="profile.showEditForm=true" ng-hide="profile.showEditForm" class="btn btn-default"><i class="fa fa-pencil"></i> Edit Profile</a>
+<hr>
+
+<form ng-show="profile.showEditForm" ng-submit="profile.updateProfile()">
+<h3 class="text-center">Edit Profile</h3>
+
+  <div class="form-group">
+    <input type="text" ng-model="profile.new_profile.fullname" class="form-control" ngValue="main.currentUser().fullname"placeholder="Fullname">
+  </div>
+	<div class="form-group">
+	  <input type="text" ng-model="profile.new_profile.username" class="form-control" ngValue="main.currentUser().username" placeholder="username">
+  </div>
+  <div class="form-group">
+    <input type="text" ng-model="profile.new_profile.email" class="form-control" placeholder="Email" ngValue="main.currentUser().email">
+  </div>
+  <div class="form-group">
+    <input type="password" ng-model="profile.new_user.password" class="form-control" placeholder="Password" ngValue="main.currentUser().password">
+  </div>
+  <input type="submit" value="Update Profile" class="btn btn-block btn-info">
+  <a href="#" ng-click="profile.deleteProfile(currentUser)"class="btn btn-default"><i class="fa fa-trash-o"></i> Delete Profile</a>
+</form>
+<br>
+

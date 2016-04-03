@@ -1,0 +1,79 @@
+/*colors*/
+	/*color: #E85E5E; coral*/ 
+	/*background-color: #6F5682; light purple*/
+body {
+	color: #D1BEE0;
+	background-color: #6F5682;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: #E85E5E; 
+	font-size: 1.2em;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+	color: #45ACAD;
+	font-size: 2em;
+}
+
+.navbar {
+	border: 10px solid #321453;
+	/*darker purple*/
+	/*background-color: #360D54;*/
+	padding: .7%;
+}
+
+.right-nav {
+	font-size: 5em;
+}
+
+#precipeLink {
+	color: #E85E5E;
+	font-family: 'Pacifico', cursive;
+	font-size: 2.5em;
+}
+
+#precipeLink:hover {
+	font-size: 2.7em;
+	color: #45ACAD;
+}
+
+/*HOMEPAGE*/
+#home-div {
+	margin: 0 15%;
+}
+
+#h1-precipes {
+	color: #D1BEE0;
+	font-weight: bold;
+	/*font-family: 'Pacifico', cursive;*/
+	font-size: 3em;
+}
+
+#p-home-content {
+	color: #D1BEE0;
+	margin-top: 2%;
+	font-size: 2em;
+}
+
+#img-recipe {
+	margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+{
+  "name": "precipes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "lena",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.15.0",
+    "dotenv": "^2.0.0",
+    "colors": "^1.1.2",
+    "express": "^4.13.4",
+    "hbs": "^4.0.0",
+    "method-override": "^2.3.5",
+    "jwt-simple": "^0.4.1",
+    "moment": "^2.11.1",
+    "mongoose": "^4.4.10",
+    "morgan": "^1.7.0",
+    "path": "^0.12.7"
+  }
+}
