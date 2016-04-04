@@ -1,4 +1,5 @@
 var User = require('../models/user');
+var Recipe = require('../models/recipe')
 
 // User.find({}, function(err, users) {
 //   if(err) {

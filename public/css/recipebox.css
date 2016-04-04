@@ -1,0 +1,10 @@
+#new-recipe-form {
+	background-color: #DEDE37;
+	opacity: .8;
+	background-image: url("coralterri.jpg");
+	background-size: cover;
+	width: 70%;
+	margin: 0 auto;
+	border-radius: 10px;
+	padding: 1%;
+}

@@ -1,4 +1,5 @@
 var Recipe = require('../models/recipe')
+var User = require('../models/user')
 
 var recipesController = {
 
@@ -7,21 +8,24 @@ index: function(req, res) {
 		if(err) {
 			console.log("Error".bgRed, err); 
 		}
-			console.log("allRecipes are ".bgYellow, allRecipes); 
+		res.send(JSON.stringify(allRecipes.reverse()));
+			// console.log("allRecipes are ".bgYellow, allRecipes); 
  	});
 },
 
 create: function(req, res) {
-	var newRecipe = new Recipe(req.body);
-	 console.log("A New Recipe".bgMagenta, newRecipe); 
+		var userId = req.params.userId
+		var newRecipe = new Recipe(req.body);
+		 // console.log("A New Recipe".bgMagenta, newRecipe); 
 
-	newRecipe.save(function(err, savedRecipe) {
-	 if(err) {
-	 	console.log("Error".red, err); 
-	 }
-	 	console.log("Saved Recipe is".bgYellow, savedRecipe);
-    res.json(savedRecipe);
-   });
+		newRecipe.save(function(err, savedRecipe) {
+		 if(err) {
+		 	console.log("Error".red, err); 
+		 }
+		 	console.log("Saved Recipe is".bgYellow, savedRecipe);
+	    // res.status(200).send(JSON.stringify(savedRecipe));
+	    res.redirect('/api/recipes')
+	   });
 
 }
 

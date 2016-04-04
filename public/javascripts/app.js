@@ -70,7 +70,6 @@ function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
       }
     })
 
-
     function skipIfLoggedIn($q, $auth) {
       var deferred = $q.defer();
       if ($auth.isAuthenticated()) {
@@ -313,3 +312,5 @@ function Account($http, $q, $auth) {
   }
 
 }
+
+

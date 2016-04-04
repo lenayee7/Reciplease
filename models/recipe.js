@@ -1,5 +1,6 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema
+var User = require('./user');
 
 var recipeSchema = new Schema({
   created: { type: Date },

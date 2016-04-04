@@ -9,6 +9,7 @@ var express 	   	= require('express'),
 	path 			      = require('path'),
 	logger 			    = require('morgan'),
   color           = require('colors'),
+  session         = require("express-session"),
 
   routes 					= require('./config/routes')
 	User 			  		= require('./models/user');
@@ -29,6 +30,36 @@ app.use(express.static(__dirname + '/public'));
 
 //routes
 app.use(routes);
+
+// app.use(session({secret: 'fisheeee'}));
+
+app.use(session({resave: true, saveUninitialized: true, secret: 'SOMERANDOMSECRETHERE', cookie: { maxAge: 60000 }}));
+// create the session
+
+// extending the 'req' obj to help manage sessions
+app.use(function(req, res, next){
+  //login user
+  req.login = function(user) {
+    req.session.userId = user._id;
+  };
+  // find current user
+  req.currentUser = function (cb) {
+    User.findOne({ _id: req.session.userId },
+    function(err, user){
+      req.user = user;
+      cb(null, user);
+      });
+  };
+  // log out current user
+  req.logout = function() {
+    req.session.userId = null;
+    req.user = null;
+  };
+  // call the next middleware in the stack
+  req.currentUser(next);
+});
+
+
 
 /*
  * API Routes
@@ -102,6 +133,10 @@ app.post('/auth/login', function (req, res) {
       if (!isMatch) {
         return res.status(401).send({ message: 'Invalid email or password.' });
       }
+
+      req.session.userId = user._id
+          console.log("req.session".bgGreen, req.session.userId); 
+
         console.log("logged in user ".green, user); 
       res.send({ token: auth.createJWT(user) });
     });
@@ -116,7 +151,6 @@ app.post('/auth/login', function (req, res) {
 app.get('*', function (req, res) {
   res.render('index');
 });
-
 
 // app.get(['/', '/signup', '/login', '/profile'], function (req, res) {
 //   res.render('index');
