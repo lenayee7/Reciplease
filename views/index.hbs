@@ -39,6 +39,7 @@
   <script type="text/javascript" src="javascripts/app.js"></script>
   <!-- <script type="text/javascript" src="javascripts/routes.js"></script> -->
 	<script type="text/javascript" src="javascripts/recipesCtrl.js"></script>
+  <script type="text/javascript" src="javascripts/factory.js"></script>
 
 
 	<title>Precipes</title>
@@ -54,16 +55,16 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a id="precipeLink"class="navbar-brand" href="/">Precipes</a>
+        <a id="precipeLink"class="navbar-brand" href="/">Reciplease!</a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="/api/recipes">Recipe Domain</a></li>
+          <li><a ui-sref="recipes">Recipe Community</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li ng-show="!main.currentUser()"><a ui-sref="signup">Sign Up</a></li>
           <li ng-show="!main.currentUser()"><a ui-sref="login">Log In</a></li>
-          <li ng-show="main.currentUser()"><a ui-sref="/profile/recipes">Recipe Box</a></li>
+          <li ng-show="main.currentUser()"><a ui-sref="recipes">Recipe Box</a></li>
           <li ng-show="main.currentUser()"><a ui-sref="profile">\{{main.currentUser().fullname}}</a></li>
           <li ng-show="main.currentUser()"><a ui-sref="logout">Log Out</a></li>
         </ul>

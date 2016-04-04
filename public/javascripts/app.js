@@ -1,6 +1,6 @@
 console.log('what')
 angular
-  .module('RecipeApp', ['ui.router', 'ngResource', 'satellizer', 'RecipesCtrl'])
+  .module('RecipeApp', ['ui.router', 'ngResource', 'satellizer', 'RecipesCtrl', 'RecipeFactory'])
   .controller('MainController', MainController)
   .controller('HomeController', HomeController)
   .controller('LoginController', LoginController)
@@ -68,6 +68,13 @@ function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
       resolve: {
         loginRequired: loginRequired
       }
+    })
+
+    .state('recipes', {
+      url: '/profile/recipes',
+      templateUrl: 'templates/recipes/recipe-index.html',
+      controller: 'RecipesCtrl',
+      controllerAs: 'recipe'
     })
 
     function skipIfLoggedIn($q, $auth) {

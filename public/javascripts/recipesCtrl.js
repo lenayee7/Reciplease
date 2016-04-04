@@ -2,8 +2,6 @@
 
 var RecipesCtrl = angular.module('RecipesCtrl', []);
 
-
-
 RecipeFactory.$inject = ['$resource'];
 function RecipeFactory($resource) {
 	return $resource('/api/recipes/:id', { id: '@_id' },
@@ -12,9 +10,9 @@ function RecipeFactory($resource) {
 	});
 }
 
-Recipes.Ctrl.controller('RecipesCtrl', ['$scope', 'Recipes', function($scope,Recipes) {
+RecipesCtrl.controller('RecipesCtrl', ['$scope', 'Recipe', function($scope, Recipe) {
 		console.log('WORKING'); 
-	$scope.recipes = Recipes.query();
+		$scope.hello = Recipe.message
 }]);
 
 
