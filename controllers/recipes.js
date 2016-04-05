@@ -23,8 +23,8 @@ create: function(req, res) {
 		 	console.log("Error".red, err); 
 		 }
 		 	console.log("Saved Recipe is".bgYellow, savedRecipe);
-	    // res.status(200).send(JSON.stringify(savedRecipe));
-	    res.redirect('/api/recipes')
+	    res.status(200).send(JSON.stringify(savedRecipe));
+	    // res.redirect('/api/recipes')
 	   });
 
 }

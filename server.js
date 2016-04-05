@@ -28,50 +28,20 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname + '/views'));
 app.use(express.static(__dirname + '/public'));
 
+// require and load dotenv
+require('dotenv').load();
+
 //routes
 app.use(routes);
-
-// app.use(session({secret: 'fisheeee'}));
-
-// app.use(session({resave: true, saveUninitialized: true, secret: 'SOMERANDOMSECRETHERE', cookie: { maxAge: 60000 }}));
-// create the session
-
-// extending the 'req' obj to help manage sessions
-// app.use(function(req, res, next){
-//   //login user
-//   req.login = function(user) {
-//     req.session.userId = user._id;
-//   };
-//   // find current user
-//   req.currentUser = function (cb) {
-//     User.findOne({ _id: req.session.userId },
-//     function(err, user){
-//       req.user = user;
-//       cb(null, user);
-//       });
-//   };
-//   // log out current user
-//   req.logout = function() {
-//     req.session.userId = null;
-//     req.user = null;
-//   };
-//   // call the next middleware in the stack
-//   req.currentUser(next);
-// });
-
-
 
 /*
  * API Routes
  */
 
-app.get('/api/me', auth.ensureAuthenticated, function (req, res) {
-  User.findById(req.user, function (err, user) {
-    res.send(user.populate('posts'));
-  });
-});
+// 
 
-app.put('/api/me', auth.ensureAuthenticated, function (req, res) {
+
+app.put('/api/users/:id', auth.ensureAuthenticated, function (req, res) {
   User.findById(req.user, function (err, user) {
       console.log("Not updated yet, ".bgGreen, user); 
     if (!user) {
@@ -87,7 +57,7 @@ app.put('/api/me', auth.ensureAuthenticated, function (req, res) {
   });
 });
 
-app.delete('/api/me', function(req,res) {
+app.delete('/api/users/:id', function(req,res) {
     console.log("DELETE SERVER"); 
   User.findById(req.user, function(err, user) {
     if(err) {

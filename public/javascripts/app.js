@@ -1,6 +1,6 @@
 console.log('what')
-angular
-  .module('RecipeApp', ['ui.router', 'ngResource', 'satellizer', 'RecipesCtrl', 'RecipeFactory'])
+var app = angular
+  .module('RecipeApp', ['ui.router', 'ngResource', 'satellizer', 'RecipeFactory'])
   .controller('MainController', MainController)
   .controller('HomeController', HomeController)
   .controller('LoginController', LoginController)
@@ -71,10 +71,13 @@ function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
     })
 
     .state('recipes', {
-      url: '/profile/recipes',
-      templateUrl: 'templates/recipes/recipe-index.html',
+      url: '/recipes',
+      templateUrl: 'templates/recipes/recipe-box.html',
       controller: 'RecipesCtrl',
-      controllerAs: 'recipe'
+      controllerAs: 'recipes',
+      resolve: {
+        loginRequired: loginRequired
+      }
     })
 
     function skipIfLoggedIn($q, $auth) {
@@ -200,7 +203,7 @@ function ProfileController (Account) {
       });
   };
 
-// TODO NEED TO DO- user ID is not defined
+// TODO: NEED TO DO- user ID is not defined
   vm.deleteProfile = function(currentUser) {
       console.log("Current user id", currentUser); 
     Account.remove({id: currentUser._id});
@@ -302,6 +305,7 @@ function Account($http, $q, $auth) {
 
   function getProfile() {
     return $http.get('/api/me');
+      //this was /api/me
   }
 
   function updateProfile(profileData) {

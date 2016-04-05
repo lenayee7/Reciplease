@@ -10,16 +10,29 @@ var Recipe = require('../models/recipe')
 
 var usersController = {
 
-index: function(req, res) {
-    console.log("Here!"); 
-   User.find({}, function(err, users) {
-     console.log("Error".bgRed, err);
-   	if(err) {
-      console.log("Users so far ".green, users); 
-    } 
-    res.status(200).send(JSON.stringify(users));
+showUser: function(req, res) {
+    User.findById(req.user, function (err, user) {
+      if(err) {
+        console.log("ERROR".red, err); 
+      }
+      res.send(user.populate('recipes'));
   });
- },
+},
+
+editUser: function(req, res) {
+  console.log("hi lena");
+},
+
+// index: function(req, res) {
+//     console.log("Here!"); 
+//    User.find({}, function(err, users) {
+//      console.log("Error".bgRed, err);
+//    	if(err) {
+//       console.log("Users so far ".green, users); 
+//     } 
+//     res.status(200).send(JSON.stringify(users));
+//   });
+//  },
 
 create: function(req, res) {
     
