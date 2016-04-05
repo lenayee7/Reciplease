@@ -9,9 +9,9 @@ angular.module('RecipeFactory', [])
 	  }
 	  // query: {
 	  // 	isArray: true,
-	  // 	transformResponse: function(data) {
-	  // 			console.log("These are factory recipes ", angular.fromJson(data)); 
-	  // 		return angular.fromJson(data);
+	  // 	transformResponse: function(response) {
+	  // 			console.log("These are factory recipes ", angular.fromJson(response)); 
+	  // 		// return angular.fromJson(data);
 	  // 	}
 	  // }
 	});
@@ -22,4 +22,4 @@ angular.module('RecipeFactory', [])
 // RecipeFactory.$inject = ['$resource'];
 // function RecipeFactory($resource) {
 // }
-console.log("Hello factory")
+console.log("Factory is working")

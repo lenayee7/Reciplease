@@ -27,14 +27,21 @@ router.route('/api/users')
 	.get(usersController.index)
 	.post(usersController.create);
 
+
+
+
 // router.route('/api/users/:id')
 // 	.get(auth.ensureAuthenticated, usersController.showUser)
 // 	.put(auth.ensureAuthenticated, usersController.editUser);
 // 	.delete(usersController.destroy);
 
-// router.route('/api/recipes')
-// 	.get(recipesController.index)
-// 	.post(recipesController.create);
+router.route('/api/recipes')
+	.get(recipesController.allRecipesIndex)
+	.post(recipesController.create);
+
+
+
+
 
 // router.route('/api/recipes/:id')
 

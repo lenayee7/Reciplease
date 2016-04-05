@@ -69,6 +69,12 @@ function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
         loginRequired: loginRequired
       }
     })
+    .state('recipes', {
+     url: '/profile/recipes',
+     templateUrl: 'templates/recipes/recipe-box.html',
+     controller: 'RecipesCtrl',
+     controllerAs: 'recipes'
+    })
 
 
     function skipIfLoggedIn($q, $auth) {
@@ -295,14 +301,14 @@ function Account($http, $q, $auth) {
   }
 
   function getProfile() {
-    return $http.get('/api/me');
+    return $http.get('/api/currentUser');
   }
 
   function updateProfile(profileData) {
       console.log("profiledata", profileData);
     return (
       $http
-        .put('/api/me', profileData)
+        .put('/api/currentUser', profileData)
         .then(
           function (response) {
             self.user = response.data;

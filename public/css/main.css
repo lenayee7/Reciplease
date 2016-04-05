@@ -5,8 +5,9 @@
 	/*E34B36*/
 body {
 	color: #DE5547;
-	background-image: url("https://s-media-cache-ak0.pinimg.com/736x/f1/89/85/f189852fa838b839fcd15e497f33707b.jpg");
-	/*background-color: #6F5682;*/
+	/*background-image: url("https://s-media-cache-ak0.pinimg.com/736x/f1/89/85/f189852fa838b839fcd15e497f33707b.jpg");*/
+/*	background-color: #6F5682;*/
+		background-color: white;
 	font-family: 'Open Sans', sans-serif;
 }
 

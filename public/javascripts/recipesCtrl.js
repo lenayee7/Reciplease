@@ -5,12 +5,13 @@ app.controller('RecipesCtrl', RecipesCtrl);
 RecipesCtrl.$inject = ['$scope', 'Recipe'];
 
 function RecipesCtrl ($scope, Recipe) {
+	 	// console.log("What is Recipe? ", Recipe); 
 			var vm = this;
-				console.log(vm); 
-			// vm.recipes = Recipe.query();
-			$scope.recipes = Recipe.query();
+				// console.log("What is vm? ", vm); 
+			vm.recipes = Recipe.query();
+			// $scope.recipes = Recipe.query();
 				vm.recipe = {};
-				console.log("$scope.recipes are ", vm.recipes); 
+				console.log("vm.recipes are... ", vm.recipes); 
 			//if above doesn't update view, try `.$apply`
 			// $scope.$apply(function() {
 	  	//   $scope.recipes = Recipe.query();
@@ -29,14 +30,11 @@ function RecipesCtrl ($scope, Recipe) {
 			};
 
 
-console.log("recipes controller loaded");
+
 
 }
 	
 // }]);
 
-console.log("recipes Pcontroller page loaded");
-
-
-
+console.log("Recipes Controller working");
 

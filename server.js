@@ -40,13 +40,13 @@ app.use(routes);
 
 // 
 
-app.get('/api/me', auth.ensureAuthenticated, function (req, res) {
+app.get('/api/currentUser', auth.ensureAuthenticated, function (req, res) {
    User.findById(req.user, function (err, user) {
-     res.send(user.populate('posts'));
+     res.send(user.populate('recipes'));
    });
  });
 
-app.put('/api/me', auth.ensureAuthenticated, function (req, res) {
+app.put('/api/currentUser', auth.ensureAuthenticated, function (req, res) {
   User.findById(req.user, function (err, user) {
       console.log("Not updated yet, ".bgGreen, user); 
     if (!user) {

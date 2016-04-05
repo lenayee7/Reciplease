@@ -11,7 +11,6 @@ var userSchema = new Schema({
   password: { type: String, select: false },
   fullname: String,
   profilePic: String,
-  recipes: [],
   recipeId: {type: Schema.Types.ObjectId, ref: 'Recipe'},
 
 });
