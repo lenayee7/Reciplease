@@ -24,12 +24,12 @@ mongoose.connect('mongodb://localhost/precipes');
  */
 
 router.route('/api/users')
-	// .get(usersController.index)
+	.get(usersController.index)
 	.post(usersController.create);
 
-router.route('/api/users/:id')
-	.get(auth.ensureAuthenticated, usersController.showUser)
-	.put(auth.ensureAuthenticated, usersController.editUser);
+// router.route('/api/users/:id')
+// 	.get(auth.ensureAuthenticated, usersController.showUser)
+// 	.put(auth.ensureAuthenticated, usersController.editUser);
 // 	.delete(usersController.destroy);
 
 // router.route('/api/recipes')

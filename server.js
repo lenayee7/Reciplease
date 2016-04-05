@@ -40,8 +40,13 @@ app.use(routes);
 
 // 
 
+app.get('/api/me', auth.ensureAuthenticated, function (req, res) {
+   User.findById(req.user, function (err, user) {
+     res.send(user.populate('posts'));
+   });
+ });
 
-app.put('/api/users/:id', auth.ensureAuthenticated, function (req, res) {
+app.put('/api/me', auth.ensureAuthenticated, function (req, res) {
   User.findById(req.user, function (err, user) {
       console.log("Not updated yet, ".bgGreen, user); 
     if (!user) {
@@ -57,16 +62,16 @@ app.put('/api/users/:id', auth.ensureAuthenticated, function (req, res) {
   });
 });
 
-app.delete('/api/users/:id', function(req,res) {
-    console.log("DELETE SERVER"); 
-  User.findById(req.user, function(err, user) {
-    if(err) {
-      console.log("ERROR".bgRed, err); 
-    }
-      console.log("removing:", user); 
-  })
+// app.delete('/api/me', function(req,res) {
+//     console.log("DELETE SERVER"); 
+//   User.findById(req.user, function(err, user) {
+//     if(err) {
+//       console.log("ERROR".bgRed, err); 
+//     }
+//       console.log("removing:", user); 
+//   })
 
-})
+// })
 
 /*
  * Auth Routes

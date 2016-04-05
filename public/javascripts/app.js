@@ -70,15 +70,6 @@ function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
       }
     })
 
-    .state('recipes', {
-      url: '/recipes',
-      templateUrl: 'templates/recipes/recipe-box.html',
-      controller: 'RecipesCtrl',
-      controllerAs: 'recipes',
-      resolve: {
-        loginRequired: loginRequired
-      }
-    })
 
     function skipIfLoggedIn($q, $auth) {
       var deferred = $q.defer();
@@ -203,7 +194,7 @@ function ProfileController (Account) {
       });
   };
 
-// TODO: NEED TO DO- user ID is not defined
+// TODO NEED TO DO- user ID is not defined
   vm.deleteProfile = function(currentUser) {
       console.log("Current user id", currentUser); 
     Account.remove({id: currentUser._id});
@@ -305,7 +296,6 @@ function Account($http, $q, $auth) {
 
   function getProfile() {
     return $http.get('/api/me');
-      //this was /api/me
   }
 
   function updateProfile(profileData) {
@@ -323,5 +313,3 @@ function Account($http, $q, $auth) {
   }
 
 }
-
-
