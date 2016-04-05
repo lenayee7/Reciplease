@@ -14,6 +14,17 @@ allRecipesIndex: function(req, res) {
  	});
 },
 
+getUserRecipes: function(req, res) {
+	var id = req.params.id;
+		User.findById({_id: id}, function (err, userRecipes) {
+			if(err) {
+				console.log("Error".bgRed, err); 
+			}
+			// res.send(JSON.stringify(userRecipes.reverse()));
+			console.log("userRecipes are ".bgYellow, userRecipes); 
+		})
+},
+
 create: function(req, res) {
 		var userId = req.params.userId
 		var newRecipe = new Recipe(req.body);
@@ -24,8 +35,8 @@ create: function(req, res) {
 		 	console.log("Error".red, err); 
 		 }
 		 	console.log("Saved Recipe is".bgYellow, savedRecipe);
-	    res.status(200).send(JSON.stringify(savedRecipe));
-	    // res.redirect('/api/recipes')
+	    // res.status(200).send(JSON.stringify(savedRecipe));
+	    res.redirect('api/profile/')
 	   });
 
 }

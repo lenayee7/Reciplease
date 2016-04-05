@@ -1,56 +1,68 @@
-<!-- <div class="container" ng-controller="RecipesCtrl as recipes"> -->
 <div>
-{{recipes}}
-<!-- 	<h1>Recipe Box</h1>
-	<hr>
+	<h1>Recipe Box</h1>
+<!-- 	<div>
+		<button ui-sref="newRecipe" ng-hide="rec.showCreateRecipe" ng-click="showCreateRecipe=true" class="btn btn-info">Create Recipe</button>
+	</div> -->
+	<div>
+		<button ui-sref="newRecipe" class="btn btn-info">Create Recipe</button>
+	</div>
 
- <div class="recipe_box_div" ng-repeat="recipe in recipes">
-  <div class="row">
+
+<!-- 		{{rec}} -->
+
+<!-- <h1>ALL Recipes</h1>
+<div ng-repeat="recipe in rec.allRecipes">
+<h1>EACH RECIPE</h1> -->
+	<!-- <div ng-repeat="rec in recipe"> -->
+		<!-- <h2> recipe {{rec.title}} </h2> -->
+	<!-- <div> -->
+</div>
+<hr>
+ <div ng-repeat="recipe in rec.allRecipes">
+  <div class="recipe_box_div row">
     <div class="col-xs-4">
       <img ng-src="{{recipe.imageUrl}}" alt="Recipe Image" class="img-responsive">
     </div>
-    <div class="col-xs-8">
-	    <h5>Title: {{recipe.title}}</h5>
+    <div class="col-xs-8 text-left">
+    <pre>
+	    <h5><strong>Title:</strong>{{recipe.title}}</h5>
 	    <p><strong>Category:</strong> {{recipe.category}}</p>
 	    <p><strong>Ingredients:</strong> {{recipe.ingredients}}</p>
 	    <p><strong>Instructions:</strong> {{recipe.instructions}}</p>
 	    <p><strong>Servings:</strong> {{recipe.servings}}</p>
 	    <p><strong>Created at:</strong>{{recipe.created | date:'MMM dd, yyyy'}}</p>
+	  </pre>
     </div>
   </div>
- </div> -->
+ </div>
 
 	
 	<div class="form-group">
 
-		<button ng-hide="recipes.showCreateRecipe" ng-click="showCreateRecipe=true" class="btn btn-info">Create Recipe</button>
-
-	  <form ng-show="showCreateRecipe" ng-submit="recipes.createRecipe()" id="new-recipe-form">
+	  <form ng-show="showCreateRecipe" ng-submit="rec.createRecipe()" id="new-recipe-form">
      <div class="form-group">
-      <input type="text" class="form-control" placeholder="Title" ng-model="recipes.recipe.title">
+      <input type="text" class="form-control" placeholder="Title" ng-model="rec.recipe.title">
     </div>
 	    <!-- <div class="form-group"> -->
-	      <label for="category">Category</label> 
-	     <!--  <input type="text" class="form-control" placeholder="Appetizers, Soups & Salads, Main Dish, Side Dish, Dessert" ng-model="recipes.recipe.category"> -->
+	      <label for="category">Category</label>
 
-			  <select ng-model="recipes.recipe.category">
-	        <option ng-value="Appetizers" selected>Appetizers</option selected>
+			  <select ng-model="rec.recipe.category">
+	        <option ng-value="Appetizers" selected>Appetizers</option>
 	        <option ng-value="Breads">Breads</option>
 	        <option ng-value="SoupsSalads">Soups & Salads</option>
-	 <!--        <option ng-model="recipes.recipe.category">Dessert</option>
-	        <option ng-model="recipes.recipe.category" value="side-dish">Side Dish</option>
-	        <option ng-model="recipes.recipe.category" value="main-dish">Main Dish</option> -->
+	        <option ng-model="rec.recipe.category">Dessert</option>
+	        <option ng-model="rec.recipe.category" value="side-dish">Side Dish</option>
+	        <option ng-model="rec.recipe.category" value="main-dish">Main Dish</option>
 	      </select>
-
 	 
 	    <div class="form-group">
 	      <p><label>Ingredients</label><p>
-	      <textarea rows="7" cols="50" ng-model="recipes.recipe.ingredients" placeholder="One ingredient per line e.g. 3.oz salmon fillet">
+	      <textarea rows="7" cols="50" ng-model="rec.recipe.ingredients" placeholder="One ingredient per line e.g. 3.oz salmon fillet">
 	      </textarea>
 	    </div>
 	    <div class="form-group">
 	      <p><label>Instructions</label></p>
-	      <textarea rows="7" name="instructions" cols="50" ng-model="recipes.recipe.instructions" value="instructions" placeholder="1. Do this...preheat to 350 degrees">
+	      <textarea rows="7" name="instructions" cols="50" ng-model="rec.recipe.instructions" value="instructions" placeholder="1. Do this...preheat to 350 degrees">
 	      </textarea>
 	    </div>
 	  <!--   <div class="form-group">
@@ -60,16 +72,14 @@
 	      <input type="url" class="form-control" placeholder="Image Url">
 	    </div> -->
 	    <div class="form-group">
-	       <input type="radio" name="true" ng-value="true" ng-model="recipes.recipe.public" selected>Public<br>
-	        <input type="radio" ng-model="recipes.recipe.public" ng-value="false" name="false"> Private<br>
+	       <input type="radio" name="true" ng-value="true" ng-model="rec.recipe.public" selected>Public<br>
+	        <input type="radio" ng-model="rec.recipe.public" ng-value="false" name="false"> Private<br>
 	    </div>
 	    <div class="form-group">
-	      <input type="number" name="servings" ng-model="recipes.recipe.servings" placeholder="Servings e.g. 2" >
+	      <input type="number" name="servings" ng-model="rec.recipe.servings" placeholder="Servings e.g. 2" >
 	    </div>
 	    <input type="submit" value="Add Recipe" class="btn">
 	    <input ng-click="showCreateRecipe=false" type="button" value="Cancel" class="btn">
 	  </form>
 
-	</div>
 		
-</div>

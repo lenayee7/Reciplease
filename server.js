@@ -9,9 +9,9 @@ var express 	   	= require('express'),
 	path 			      = require('path'),
 	logger 			    = require('morgan'),
   color           = require('colors'),
-  session         = require("express-session"),
+  // session         = require("express-session"),
 
-  routes 					= require('./config/routes')
+  routes 					= require('./config/routes'),
 	User 			  		= require('./models/user');
 
 // require and load dotenv
@@ -40,13 +40,13 @@ app.use(routes);
 
 // 
 
-app.get('/api/currentUser', auth.ensureAuthenticated, function (req, res) {
+app.get('/api/profile', auth.ensureAuthenticated, function (req, res) {
    User.findById(req.user, function (err, user) {
-     res.send(user.populate('recipes'));
+     res.send(user.populate('recipeList'));
    });
  });
 
-app.put('/api/currentUser', auth.ensureAuthenticated, function (req, res) {
+app.put('/api/profile', auth.ensureAuthenticated, function (req, res) {
   User.findById(req.user, function (err, user) {
       console.log("Not updated yet, ".bgGreen, user); 
     if (!user) {

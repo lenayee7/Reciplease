@@ -5,12 +5,10 @@ var express 	   		= require('express'),
 	methodOverride 		= require('method-override'),
 	path 			      	= require('path'),
 	logger 			    	= require('morgan'),
-	colors 						= require('colors');
-	usersController 	= require('../controllers/users')
-	recipesController = require('../controllers/recipes')
+	colors 						= require('colors'),
 	expressSession 		= require('express-session'),
 	cookieParser   		= require('cookie-parser'),
-	auth 							= require('../resources/auth'),
+	// auth 							= require('../resources/auth'),
 	// expressSession  = require('express-session'),
 	// cookieParser		= require('cookie-parser'),
 	usersController 	= require('../controllers/users')
@@ -35,9 +33,18 @@ router.route('/api/users')
 // 	.put(auth.ensureAuthenticated, usersController.editUser);
 // 	.delete(usersController.destroy);
 
+
 router.route('/api/recipes')
 	.get(recipesController.allRecipesIndex)
 	.post(recipesController.create);
+
+// router.route('/api/profile/recipes/new');
+// 	.get(recipesController.new);
+
+router.route('/api/profile/recipes')
+	.get(recipesController.getUserRecipes);
+
+
 
 
 

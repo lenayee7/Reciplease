@@ -1,15 +1,13 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema
-var User = require('./user');
 
-var recipeSchema = new Schema({
+var RecipeSchema = new Schema({
   created: { type: Date },
   updated: { type: Date },
   title: String,
-  // category: String,
   category: String,
-  ingredients: [String],
-  instructions: [String],
+  ingredients: String,
+  instructions: String,
   servings: Number,
   recipeUrl: String,
   imageUrl: String,
@@ -18,5 +16,6 @@ var recipeSchema = new Schema({
   userId: {type: Schema.Types.ObjectId, ref: 'User'}
 });
 
-var Recipe = mongoose.model('Recipe', recipeSchema);
+
+var Recipe = mongoose.model('Recipe', RecipeSchema);
 module.exports = Recipe;

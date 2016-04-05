@@ -69,11 +69,19 @@ function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
         loginRequired: loginRequired
       }
     })
+    .state('newRecipe', {
+      url: '/profile/recipes/new',
+      templateUrl: 'templates/recipes/new-recipe.html',
+      controller: 'RecipesCtrl',
+      controllerAs: 'rec'
+    })
+
+
     .state('recipes', {
      url: '/profile/recipes',
      templateUrl: 'templates/recipes/recipe-box.html',
      controller: 'RecipesCtrl',
-     controllerAs: 'recipes'
+     controllerAs: 'rec'
     })
 
 
@@ -301,14 +309,14 @@ function Account($http, $q, $auth) {
   }
 
   function getProfile() {
-    return $http.get('/api/currentUser');
+    return $http.get('/api/profile');
   }
 
   function updateProfile(profileData) {
       console.log("profiledata", profileData);
     return (
       $http
-        .put('/api/currentUser', profileData)
+        .put('/api/profile', profileData)
         .then(
           function (response) {
             self.user = response.data;

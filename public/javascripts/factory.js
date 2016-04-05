@@ -10,8 +10,8 @@ angular.module('RecipeFactory', [])
 	  // query: {
 	  // 	isArray: true,
 	  // 	transformResponse: function(response) {
-	  // 			console.log("These are factory recipes ", angular.fromJson(response)); 
-	  // 		// return angular.fromJson(data);
+	  // 		console.log("These are factory recipes ", angular.fromJson(response)); 
+	  // 		return angular.fromJson(response);
 	  // 	}
 	  // }
 	});
