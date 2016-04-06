@@ -1,11 +1,11 @@
 app.controller('userRecipeCtrl', userRecipeCtrl);
 
 // userRecipeCtrl.$inject = ['userRecipeService'];
-userRecipeCtrl.$inject = ['$scope', '$http', '$stateParams', '$state'];
+userRecipeCtrl.$inject = ['$scope', '$http', '$stateParams'];
 
 
-function userRecipeCtrl ($scope, $http, $stateParams, $state) {
-
+function userRecipeCtrl ($scope, $http, $stateParams) {
+	
 	var vm = this;
 	vm.userRecipes = {};
 	vm.getUserRecipes = getUserRecipes;
@@ -14,16 +14,14 @@ function userRecipeCtrl ($scope, $http, $stateParams, $state) {
 
 	getUserRecipes();
 
+
 	function getUserRecipes () {
 		$http
 			.get('/api/profile/recipes')
 			.then(function(response) {
 					console.log("User Recipes ", response.data); 
 			 vm.userRecipes = response.data
-			 // getUserRecipes();
-			 // $state.go('recipes');
 			})
 	}
-
 
 }

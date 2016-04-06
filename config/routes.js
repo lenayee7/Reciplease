@@ -30,7 +30,6 @@ router.route('/api/users')
 // 	.put(auth.ensureAuthenticated, usersController.editUser);
 // 	.delete(usersController.destroy);
 
-
 router.route('/api/recipes')
 	.get(recipesController.allRecipesIndex)
 	.post(auth.ensureAuthenticated, recipesController.create);
@@ -39,13 +38,8 @@ router.route('/api/recipes')
 router.route('/api/profile/recipes')
 	.get(auth.ensureAuthenticated, recipesController.getUserRecipes);
 
-
-// router.route('/api/recipes/:id')
-
-// router.route('api/users/:id /recipes')
-
-
-// router.route('api/users/:id/recipes/:id')
+router.route('/api/profile/recipes/:recipe_id')
+	.get(auth.ensureAuthenticated, recipesController.getRecipe);
 
 
 

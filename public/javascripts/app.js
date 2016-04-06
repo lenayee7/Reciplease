@@ -90,9 +90,14 @@ function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
      controllerAs: 'userrec'
     })
 
+    .state('recipeshow', {
+     url: '/profile/recipes/:recipeId',
+     templateUrl: 'templates/recipes/recipe-show.html',
+     controller: 'recipeShowCtrl',
+     controllerAs: 'recShow'
+    })
+
   
-
-
 
     function skipIfLoggedIn($q, $auth) {
       var deferred = $q.defer();
@@ -302,7 +307,7 @@ function Account($http, $q, $auth) {
     getProfile().then(
       function onSuccess(response) {
         self.user = response.data;
-          console.log("Current User right now is... ", self.user); 
+          // console.log("Current User right now is... ", self.user); 
         deferred.resolve(self.user);
       },
 

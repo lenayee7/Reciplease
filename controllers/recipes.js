@@ -14,6 +14,21 @@ var recipesController = {
 	 	});
 	},
 
+	getRecipe: function(req, res) {
+		var userId = req.user
+				// console.log("user id from get recipe ".bgMagenta, userId);
+		var recipeId = req.params.id
+					// console.log("getRecipe ID".bgMagenta, recipeId); 
+		Recipe.findOne(recipeId, function(err, recipe) {
+			if(err) {
+				console.log("Error".bgRed, err); 
+			}
+			res.send(recipe)
+				console.log("Sending this recipe back ".bgYellow, recipe); 
+		});
+			
+	},
+
 	getUserRecipes: function(req, res) {
 		var id = req.user
 			// console.log("What is userID??".bgYellow, id); 
@@ -64,17 +79,9 @@ var recipesController = {
 				});
 			}
 		});
-			 //find user first
-			 //push recipe in the user then save
-			// newRecipe.save(function(err, savedRecipe) {
-			//  if(err) {
-			//  	console.log("Error".red, err); 
-			//  }
-			//  	console.log("Saved Recipe is".bgYellow, savedRecipe);
-		 //    // res.status(200).send(JSON.stringify(savedRecipe));
-		 //    res.redirect('/api/profile')
-		 //   });
-	}
+	},
+
+
 
 
 

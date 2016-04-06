@@ -3,15 +3,16 @@
 		<div>
 			<button ui-sref="newRecipe" class="btn btn-info">Create Recipe</button>
 		</div>
-{{userRecipes}}
+<!-- {{userrec}} -->
 	<div ng-repeat="recipe in userrec.userRecipes">
 	  <div class="recipe_box_div row">
 	  <!--   <div class="col-xs-4">
 	      <img ng-src="{{recipe.imageUrl}}" alt="Recipe Image" class="img-responsive">
 	    </div> -->
+	    {{recipe._id}}
 	    <div class="col-xs-8 text-left">
-	 
-		    <h5><strong>Title:</strong>{{recipe.title}}</h5>
+
+		    <a ng-href="/profile/recipes/{{recipe._id}}"><h5><strong>Title:</strong>{{recipe.title}}</h5></a>
 		    <p><strong>Category:</strong> {{recipe.category}}</p>
 		    <p><strong>Ingredients:</strong><pre>{{recipe.ingredients}}</pre></p>
 		    <p><strong>Instructions:</strong> <pre>{{recipe.instructions}}</pre></p>
