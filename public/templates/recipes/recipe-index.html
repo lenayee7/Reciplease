@@ -1,6 +1,35 @@
-<div class="container" ng-controller=RecipesCtrl>
-
+<div>
 	<h1>Recipe Community</h1>
-
-
+<!-- 	<div>
+		<button ui-sref="newRecipe" ng-hide="rec.showCreateRecipe" ng-click="showCreateRecipe=true" class="btn btn-info">Create Recipe</button>
+	</div> -->
 </div>
+<hr>
+ <div ng-repeat="recipe in rec.allRecipes">
+  <div class="recipe_box_div row">
+    <div class="col-xs-4">
+      <img ng-src="{{recipe.imageUrl}}" alt="Recipe Image" class="img-responsive">
+    </div>
+    <div class="col-xs-8 text-left">
+ 
+	    <h5><strong>Title:</strong>{{recipe.title}}</h5>
+	    <p><strong>Category:</strong> {{recipe.category}}</p>
+	    <p><strong>Ingredients:</strong><pre>{{recipe.ingredients}}</pre></p>
+	    <p><strong>Instructions:</strong> <pre>{{recipe.instructions}}</pre></p>
+	    <p><strong>Servings:</strong> {{recipe.servings}}</p>
+	    <p><strong>Created at:</strong>{{recipe.created | date:'MMM dd, yyyy'}}</p>
+
+    </div>
+  </div>
+ </div>
+
+
+<!-- 		{{rec}} -->
+
+<!-- <h1>ALL Recipes</h1>
+<div ng-repeat="recipe in rec.allRecipes">
+<h1>EACH RECIPE</h1> -->
+	<!-- <div ng-repeat="rec in recipe"> -->
+		<!-- <h2> recipe {{rec.title}} </h2> -->
+	<!-- <div> -->
+	

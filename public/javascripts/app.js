@@ -76,13 +76,22 @@ function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
       controllerAs: 'rec'
     })
 
+    .state('allRecipes', {
+     url: '/recipes',
+     templateUrl: 'templates/recipes/recipe-index.html',
+     controller: 'RecipesCtrl',
+     controllerAs: 'rec'
+    })
 
     .state('recipes', {
      url: '/profile/recipes',
      templateUrl: 'templates/recipes/recipe-box.html',
-     controller: 'RecipesCtrl',
-     controllerAs: 'rec'
+     controller: 'userRecipeCtrl',
+     controllerAs: 'userrec'
     })
+
+  
+
 
 
     function skipIfLoggedIn($q, $auth) {

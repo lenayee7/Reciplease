@@ -15,14 +15,14 @@ var recipesController = {
 	},
 
 	getUserRecipes: function(req, res) {
-		var id = req.params.id;
-			console.log("What is userID??", id); 
+		var id = req.user
+			// console.log("What is userID??".bgYellow, id); 
 			User.findById({_id: id}, function (err, userRecipes) {
 				if(err) {
 					console.log("Error".bgRed, err); 
 				}
-				// res.send(JSON.stringify(userRecipes.reverse()));
-				console.log("userRecipes are ".bgYellow, userRecipes); 
+				res.send(JSON.stringify(userRecipes.recipes.reverse()));
+				// console.log("userRecipes are ".bgYellow, userRecipes.recipes); 
 			})
 	},
 
@@ -32,11 +32,11 @@ var recipesController = {
 
 		var newRecipe = {
 			title: req.body.title,
-			// category: req.body.category,
-			// ingredients: req.body.ingredients,
-			// instructions: req.body.instructions,
-			// servings: req.body.servings,
-			// public: req.body.public,
+			category: req.body.category,
+			ingredients: req.body.ingredients,
+			instructions: req.body.instructions,
+			servings: req.body.servings,
+			public: req.body.public,
 			userId: req.user
 		}
 		// var newRecipe = new Recipe(params);
@@ -56,7 +56,8 @@ var recipesController = {
 							console.log("Error".bgRed, err); 
 						} else {
 							console.log("new SAved userwith recipe".bgGreen, user); 
-							// res.send(user)
+							// res.send(JSON.stringify(user.recipes.reverse()));
+							res.send(user)
 						}
 					});
 					

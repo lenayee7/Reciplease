@@ -42,7 +42,7 @@ app.use(routes);
 
 app.get('/api/profile', auth.ensureAuthenticated, function (req, res) {
    User.findById(req.user, function (err, user) {
-     res.send(user.populate('recipeList'));
+     res.send(user.populate('recipes'));
    });
  });
 
