@@ -2,6 +2,7 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema
 
 var RecipeSchema = new Schema({
+  // add default to dates...
   created: { type: Date },
   updated: { type: Date },
   title: String,

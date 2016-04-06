@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     bcrypt = require('bcryptjs');
-var Recipe = require('./recipe');
+var RecipeSchema = require('./recipe').schema;
 
 var userSchema = new Schema({
   created: { type: Date },
@@ -11,7 +11,7 @@ var userSchema = new Schema({
   password: { type: String, select: false },
   fullname: String,
   profilePic: String,
-  recipeBox: [Recipe]
+  recipes: [RecipeSchema]
   // recipeId: {type: Schema.Types.ObjectId, ref: 'Recipe'},
 
 });

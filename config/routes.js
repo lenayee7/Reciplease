@@ -8,7 +8,7 @@ var express 	   		= require('express'),
 	colors 						= require('colors'),
 	expressSession 		= require('express-session'),
 	cookieParser   		= require('cookie-parser'),
-	// auth 							= require('../resources/auth'),
+	auth 							= require('../resources/auth'),
 	// expressSession  = require('express-session'),
 	// cookieParser		= require('cookie-parser'),
 	usersController 	= require('../controllers/users')
@@ -36,7 +36,7 @@ router.route('/api/users')
 
 router.route('/api/recipes')
 	.get(recipesController.allRecipesIndex)
-	.post(recipesController.create);
+	.post(auth.ensureAuthenticated, recipesController.create);
 
 // router.route('/api/profile/recipes/new');
 // 	.get(recipesController.new);
