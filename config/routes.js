@@ -39,7 +39,8 @@ router.route('/api/profile/recipes')
 	.get(auth.ensureAuthenticated, recipesController.getUserRecipes);
 
 router.route('/api/profile/recipes/:recipe_id')
-	.get(auth.ensureAuthenticated, recipesController.getRecipe);
+	.get(auth.ensureAuthenticated, recipesController.getRecipe)
+	.put(auth.ensureAuthenticated, recipesController.updateRecipe);
 
 
 

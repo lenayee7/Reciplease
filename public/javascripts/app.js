@@ -94,7 +94,7 @@ function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
      url: '/profile/recipes/:recipeId',
      templateUrl: 'templates/recipes/recipe-show.html',
      controller: 'recipeShowCtrl',
-     controllerAs: 'recShow'
+     controllerAs: 'recshow'
     })
 
   
@@ -131,7 +131,6 @@ function MainController (Account) {
   vm.currentUser = function() {
    return Account.currentUser();
   }
-
 }
 
 HomeController.$inject = ["$http"]; // minification protection
@@ -163,8 +162,6 @@ function HomeController ($http) {
 }
 
 
-
-
 LoginController.$inject = ["Account", "$location"]; // minification protection
 function LoginController (Account, $location) {
   var vm = this;
@@ -175,7 +172,7 @@ function LoginController (Account, $location) {
       .login(vm.new_user)
       .then(function(){
          vm.new_user = {};
-         $location.path('/profile');
+         $location.path('/profile/recipes');
       })
   };
 }

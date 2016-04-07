@@ -1,7 +1,17 @@
+
+.recipe_show_img {
+	width:  30%;
+}
+
+.recipe_box_img {
+	height: 300px;
+}
+
 #new-recipe-form {
-	background-color: #DEDE37;
+	background-image: url("https://s-media-cache-ak0.pinimg.com/736x/f1/89/85/f189852fa838b839fcd15e497f33707b.jpg");
+/*	background-color: #DEDE37;*/
 	opacity: .8;
-	background-image: url("coralterri.jpg");
+	/*background-image: url("coralterri.jpg");*/
 	background-size: cover;
 	width: 70%;
 	margin: 0 auto;
@@ -9,24 +19,143 @@
 	padding: 1%;
 }
 
-.recipe_box_div {
-	background-color: white;
-	border: 1px solid black;
-	width: 70%;
-	margin: 0 auto;
+.recipe_img {
+/*	width: 220px;
+	height: 160px;*/
+	width: 80%;
+	max-height: 50%;
 }
 
+.panel-default {
+ 	float: left;
+	width: 350px;
+	height: 250px;
+	margin: 10px;
+	overflow: scroll;
+	/*border: 3px solid #73AD21;  */
+}
+.panel {
+
+	/*overflow: scroll;*/
+	overflow: scroll;
+}
+.panel-body {
+	/*width*/: 50%;
+/*	height: 50%;*/
+}
+/*.right {
+	float: right;
+	clear: both;
+}*/
+
+.left {
+	float: left;
+	clear: both;
+}
+
+.pDescription {
+	clear: both;
+	margin: 0 2%;
+	overflow: hidden;
+	/*width: 30%;*/
+}
+.after-box {
+    clear: left;
+    border: 1px solid red;      
+}
+
+.recipe_box_div_index {
+	display: inline-block;
+	padding: .5%;
+	/*background-color: white;*/
+	border: 1px solid black;
+	width: 300px;
+	/*height: 300px;*/
+	margin: 2%;
+	/*float: left;*/
+/*	margin: 0 auto;*/
+/*	border-radius: 25px;*/
+}
+
+.recipe_box_div {
+	padding: .5%;
+	background-color: white;
+	border: 1px solid black;
+	/*width: 100%;*/
+	margin: 0 auto;
+	border-radius: 25px;
+}
 
 pre {
-    display: block;
-    padding: 9.5px;
-    margin: 0 0 10px;
+		width: 320px;
+    /*margin: 0 0 10px;*/
     font-size: 13px;
     line-height: 1.42857143;
     color: #DE5547;
     word-break: break-all;
     word-wrap: break-word;
     background-color: white;
-    border: 1px solid white;
+    border: 2px solid #DE5547;
     border-radius: 4px;
+    white-space: pre-wrap;       /* CSS 3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    /*word-wrap: break-word; */
 }
+
+
+/*//////////RECIPE SHOW//////////*/
+
+.pre_show {
+	width: 100%;
+}
+.h2recipeShow {
+	margin-bottom: 0;
+}
+
+.recipe_show_div {
+	width: 80%;
+	margin: 0 auto;
+	border: 1px solid black;
+	overflow: hidden;
+	border-radius: 60px;
+}
+
+.recipe_show_div_instructions {
+	width: 100%;
+	margin: 0 auto;
+	border: 1px solid black;
+	overflow: hidden;
+}
+
+
+.inline_block {
+	display: inline-block;
+}
+
+.ingredients_content {
+	margin: 0 4%;
+}
+
+
+.recipe_box_div_show {
+	padding: .5%;
+	background-color: white;
+	border: 1px solid black;
+	width: 100%;
+	margin: 0 auto;
+	border-radius: 25px;
+}
+
+.row {
+	margin-left: 0;
+}
+
+@media (max-width: 1210px) {
+  
+}
+
+
+
+

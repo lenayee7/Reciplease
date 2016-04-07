@@ -3,30 +3,39 @@
 	/*background-color: #6F5682; light purple*/
 	/*color - #E65A47 - redish coral*/
 	/*E34B36*/
+/*
+.container {
+	width: 100%;
+	margin: 0 auto;
+}*/
+
 body {
 	color: #DE5547;
+	background-image: url("http://www.wallpaper-inc.com/product_files/chi-la036714vp/chi-la036714vp.jpg");
 	/*background-image: url("https://s-media-cache-ak0.pinimg.com/736x/f1/89/85/f189852fa838b839fcd15e497f33707b.jpg");*/
 /*	background-color: #6F5682;*/
-		background-color: white;
-	font-family: 'Open Sans', sans-serif;
+	background-color: white;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .navbar-default .navbar-nav>li>a {
-	color: white; 
-	font-size: 1.2em;
-	font-family: 'Ubuntu', sans-serif;
+	color: #9C1010; 
+	font-size: 1.4em;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
-	color: #DEDE37;
+	color: #856213;
 	font-size: 1.5em;
 }
 
+.navbar-default {
+	border-bottom: 2px solid #A61212;
+}
+
 .navbar {
-	border: 3px solid #E3DE40;
-	background-color: #DE5547;
-	opacity: .9;
-	/*background-image: url("/images/coralterr.jpg");*/
+	/*border: 3px solid #E3DE40;*/
+	background-image: url("http://www.wallpaper-inc.com/product_files/chi-la036714vp/chi-la036714vp.jpg");
 	/*background-size: 100% 10/0%;*/
 	padding: 2% 0;
 }
@@ -36,8 +45,9 @@ body {
 }
 
 #precipeLink {
-	color: #0C7991;
-	font-family: 'Pacifico', cursive;
+	color: #43206E;
+	/*color: #0C7991;*/
+	font-family: 'Montserrat', sans-serif;
 	font-size: 2.5em;
 }
 
@@ -48,19 +58,19 @@ body {
 
 /*HOMEPAGE*/
 #home-div {
-	margin: 0 15%;
+	margin: 0 5%;
 }
 
 #h1-precipes {
-	color: #0C7991;
+	color: #43206E;
 	/*font-weight: bold;*/
 	/*font-family: 'Dancing Script', cursive;*/
-	font-family: 'Pacifico', cursive;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 3em;
 }
 
 #p-home-content {
-	color: #0C7991;
+	color: #43206E;
 	margin-top: 2%;
 	font-size: 2em;
 }
@@ -85,6 +95,10 @@ a {
 	color: #321453;
 }
 
+.underline {
+	text-decoration: underline;
+}
+
 .text-muted {
 	color: #820A0A;
 }
@@ -94,9 +108,39 @@ a {
 	margin: 0 auto;
 }
 
+strong {
+	color: #43206E;
+}
+
+.createRecipeBtn {
+	background-color: #A61212;
+	border: 0 solid white;
+	margin-bottom: 1%;
+}
+
+.createRecipeBtn:hover {
+	background-color: #856213;
+}
+
+h1 {
+	color: #9C1010;
+}
+/*////////HOME PAGE columns//////// */
+
+#left_img_column {
+	float: left;
+	clear: both;
+}
 
 
 
+/*Profile Page*/
+
+.userInfo {
+	text-align: left;
+	width: 25%;
+	margin: 0 auto;
+}
 
 
 

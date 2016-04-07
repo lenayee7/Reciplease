@@ -7,6 +7,11 @@
 	 <div class="form-group">
 	  <input type="text" class="form-control" placeholder="Title" ng-model="rec.recipe.title">
 	 </div>
+
+	 <div class="form-group">
+	  <input type="text" class="form-control" placeholder="Description" ng-model="rec.recipe.description">
+	 </div>
+
 	  <div class="form-group">
 	    <label for="category">Category</label>
 		  <select ng-model="rec.recipe.category">
@@ -24,21 +29,30 @@
 	    <textarea rows="7" cols="50" ng-model="rec.recipe.ingredients" placeholder="One ingredient per line e.g. 3.oz salmon fillet">
 	    </textarea>
 	  </div>
+
 	  <div class="form-group">
 	    <p><label>Instructions</label></p>
 	    <textarea rows="7" name="instructions" cols="50" ng-model="rec.recipe.instructions" value="instructions" placeholder="1. Do this...preheat to 350 degrees">
 	    </textarea>
 	  </div>
-	<!--   <div class="form-group">
-	    <input type="url" class="form-control" placeholder="Recipe Url">
-	  </div>
+
 	  <div class="form-group">
-	    <input type="url" class="form-control" placeholder="Image Url">
-	  </div> -->
+	    <input type="url" class="form-control" ng-model="rec.recipe.recipeUrl" placeholder="Recipe Url">
+	  </div>
+
+	  <div class="form-group">
+	    <input type="url" class="form-control" ng-model="rec.recipe.imageUrl" placeholder="Image Url">
+	  </div>
+
 	  <div class="form-group">
 	     <input type="radio" name="true" ng-value="true" ng-model="rec.recipe.public" selected>Public<br>
 	      <input type="radio" ng-model="rec.recipe.public" ng-value="false" name="false"> Private<br>
 	  </div>
+
+		<div class="form-group">
+		  <input type="text" class="form-control" placeholder="Posted By" ng-model="rec.recipe.postedBy">
+	 	</div>
+
 	  <div class="form-group">
 	    <input type="number" name="servings" ng-model="rec.recipe.servings" placeholder="Servings e.g. 2" >
 	  </div>

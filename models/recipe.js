@@ -12,8 +12,9 @@ var RecipeSchema = new Schema({
   servings: Number,
   recipeUrl: String,
   imageUrl: String,
-  keywords: String,
+  description: String,
   public: Boolean,
+  postedBy: String,
   userId: {type: Schema.Types.ObjectId, ref: 'User'}
 });
 

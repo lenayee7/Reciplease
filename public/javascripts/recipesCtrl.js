@@ -7,6 +7,7 @@ RecipesCtrl.$inject = ['$scope', 'Recipe', '$http', '$state'];
 function RecipesCtrl ($scope, Recipe, $http, $state) {
 	 			// console.log("What is Recipe? ", Recipe); 
 			var vm = this;
+			$scope.orderProp = '-age';
 				// console.log("What is vm? ", vm); 
 			vm.allRecipes = Recipe.query();
 				console.log("vm.allRecipes are... ", vm.allRecipes); 
