@@ -33,7 +33,7 @@ HTML5/CSS
 
 SHOUT OUTS
 * Squad Leader - Ilias 
-* Derek, Szeto, Daniel
+* Derek, Szeto, Daniel, Chini, Tashi
 
 SHOUT OUT to WDI 26
 Instructors: Ilias, Ben, Alex, Dani
