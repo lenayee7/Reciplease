@@ -7,9 +7,8 @@ Reciplease is an app where you can create a home for your secret family recipes 
 By creating an account you will be able to browse full recipes on the Recipe Community and create your own recipes.
 
 ###Wireframes:
-
-![wireframe](homepage.jpg)
-
+See Trello
+Heroku:  https://precipes.herokuapp.com
 ###User Stories: https://trello.com/b/0srq9hPN/reciplease
 
 ###Technologies Used
