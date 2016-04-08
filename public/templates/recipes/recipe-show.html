@@ -1,25 +1,25 @@
 
 <a ng-href="/profile/recipes"><h4 id="back" class="text-left"><span class="glyphicon glyphicon-backward"></span> Back</h4></a>
 
-<div class="text-right">
-	<a href="#" ng-click="recshow.showEditForm=true" ng-hide="recshow.showEditForm" class="btn btn-default"><span class="glyphicon glyphicon-edit">Editing </span></a>
-</div>
-
 	<div>
 	  <div class="recipe_box_div_show row">
 	    <div class="col-xs-4">
-	      <img ng-src="{{recipe.imageUrl}}" alt="Recipe Image" class="img-responsive">
+	      <img ng-src="{{recipe.imageUrl}}" alt="Recipe Image" class="recipe_image_show">
 	    </div>
 	    <!-- {{recipe._id}} -->
 	    <div class="col-xs-8 text-left">
 		    <h5><strong>Title: </strong>{{recipe.title}}</h5>
 		    <p><strong>Category:</strong> {{recipe.category}}</p>
-		    <p><strong>Ingredients:</strong><pre class="pre_show">{{recipe.ingredients}}</pre></p>
-		    <p><strong>Instructions:</strong> <pre class="pre_show">{{recipe.instructions}}</pre></p>
+		    <p><pre class="pre_show"><strong>Ingredients:</strong></br>{{recipe.ingredients}}</pre></p>
+		    <p><pre class="pre_show"><strong>Instructions:</strong></br>{{recipe.instructions}}</pre></p>
 		    <p><strong>Servings:</strong> {{recipe.servings}}</p>
 	    </div>
 	  </div>
  </div>
+
+<div>
+	<a href="#" ng-click="recshow.showEditForm=true" ng-hide="recshow.showEditForm" class="btn btn-default"><span class="glyphicon glyphicon-edit">Editing </span></a>
+</div>
 
 <!-- <h2 class="h2recipeShow">{{recipe.title}}</h2>
 <p>{{recipe.category}}</p>

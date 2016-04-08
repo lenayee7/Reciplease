@@ -18,6 +18,7 @@ function RecipesCtrl ($scope, Recipe, $http, $state, $stateParams) {
 			// });
 			vm.createRecipe = function() {
 				var newRecipe = Recipe.save(vm.recipe);
+				$scope.category = "Appetizer"
 					vm.recipe = {};
 					if(!newRecipe) {
 							console.log("Error didn't create new recipe"); 

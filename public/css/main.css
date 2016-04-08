@@ -28,8 +28,7 @@ body {
 	color: #3B1A48; 
 	font-size: 1.7em;
 	font-family: 'Satisfy', cursive;
-	/*font-family: 'Acme', sans-serif;*/
-	/*font-family: 'Montserrat', sans-serif;*/
+	display: inline-block;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
@@ -38,6 +37,7 @@ body {
 }
 
 .navbar-default {
+	text-align: center;
 	background-color: #BA3B2D;
 	border-bottom: 2px solid #A61212;
 }
@@ -51,6 +51,7 @@ body {
 }
 
 .right-nav {
+	clear: left;
 	font-size: 5em;
 }
 
@@ -74,19 +75,18 @@ body {
 }
 
 #h1-precipes {
-	color: #3B1A48;
+	color: #99291D;
 	font-weight: bold;
-	font-family: 'Satisfy', cursive;
+	font-family: Menlo,Monaco,Consolas,"CourierNew",monospace;
 	/*font-family: 'Arvo', serif;*/
 	font-size: 3em;
 	margin-bottom: 3%;
 }
 
 #p-home-content {
-	font-family: 'Acme', sans-serif;
-	color: #3B1A48;
+	font-family: Menlo,Monaco,Consolas,"CourierNew",monospace;
 	margin-top: 5%;
-	font-size: 2em;
+	font-size: 1.5em;
 }
 
 #img-recipe {
@@ -100,7 +100,7 @@ hr {
 
 input[type=submit].btn-block {
 	background-color: #321453;
-	width: 60%;
+	width: 50%;
 	border: none;
 	margin: 0 auto;
 }
@@ -133,7 +133,7 @@ strong {
 }
 
 .createRecipeBtn {
-	background-color: #9C1010;
+	background-color: #96220B;
 	border: 0 solid white;
 	margin-bottom: 1%;
 	font-size: 1.5em;
@@ -178,11 +178,28 @@ h1 {
 
 .profile-circle {
 	width: 15%;
+	display: block;
+	margin-right: 0px;
+}
+
+.profile-avatar {
+	margin: 0;
+	width: 70px;
+	border-radius: 100px;
 }
 
 .navbar-right {
-	margin-left: 65%;
+	font-size: 1em;
+	/*margin-left: 85%;*/
 }
+
+.uploadcare-widget-button-open {
+	background-color: #321453;
+	width: 100%;
+}
+
+@media (max-width: 1000px) {
+	
 
 
 
