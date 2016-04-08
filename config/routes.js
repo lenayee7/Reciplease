@@ -15,8 +15,8 @@ var express 	   		= require('express'),
 	recipesController = require('../controllers/recipes')
 	router 						= express.Router();
 
-mongoose.connect('mongodb://localhost/precipes');
-
+// mongoose.connect('mongodb://localhost/precipes');
+mongoose.connect( process.env.MONGOLAB_URI || process.env.MONGOHQ_URL ||"mongodb://localhost/precipes");
 /*
  * JSON User Endpoints
  */
