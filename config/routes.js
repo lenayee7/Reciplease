@@ -16,7 +16,7 @@ var express 	   		= require('express'),
 	router 						= express.Router();
 
 // mongoose.connect('mongodb://localhost/precipes');
-mongoose.connect( process.env.MONGOLAB_URI || process.env.MONGOHQ_URL ||"mongodb://localhost/precipes");
+// mongoose.connect( process.env.MONGOLAB_URI || process.env.MONGOHQ_URL ||"mongodb://localhost/precipes");
 /*
  * JSON User Endpoints
  */

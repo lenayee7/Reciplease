@@ -39,7 +39,7 @@ app.use(routes);
  */
 
 // 
-mongoose.connect( process.env.MONGOLAB_URI ||process.env.MONGOHQ_URL ||"mongodb://localhost/precipes");
+mongoose.connect( process.env.MONGOLAB_URI || process.env.MONGOHQ_URL ||"mongodb://localhost/precipes");
 
 app.get('/api/profile', auth.ensureAuthenticated, function (req, res) {
    User.findById(req.user, function (err, user) {
