@@ -2,12 +2,13 @@
 
 app.controller('RecipesCtrl', RecipesCtrl);
 
-RecipesCtrl.$inject = ['$scope', 'Recipe', '$http', '$state'];
+RecipesCtrl.$inject = ['$scope', 'Recipe', '$http', '$state', '$stateParams'];
  
-function RecipesCtrl ($scope, Recipe, $http, $state) {
+function RecipesCtrl ($scope, Recipe, $http, $state, $stateParams) {
 	 			// console.log("What is Recipe? ", Recipe); 
 			var vm = this;
 			$scope.orderProp = '-age';
+			// vm.updateRecipeSchema = updateRecipeSchema;
 				// console.log("What is vm? ", vm); 
 			vm.allRecipes = Recipe.query();
 				console.log("vm.allRecipes are... ", vm.allRecipes); 
@@ -27,6 +28,21 @@ function RecipesCtrl ($scope, Recipe, $http, $state) {
 						$state.go('recipes');
 					}
 			};
+
+			// function updateRecipeSchema (recipe) {
+			// 	var recipeId = $stateParams.recipeId
+			// 		console.log("the state params updateRecipeSchema recipe id ", recipeId); 
+			// 		var url = 'api/recipes';
+
+			// 	$http
+			// 		.put(url, vm.newRecipe)
+			// 		.then(function (response) {
+			// 				console.log("Updating Recipe", response);
+			// 				console.log("Am I hitting update in recipeSchema"); 
+			// 			$scope.recipe = response.data;
+			// 			// $state.go('recipeshow');
+			// 	});
+			// }	
 
 }
 	

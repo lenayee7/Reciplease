@@ -33,6 +33,7 @@ router.route('/api/users')
 router.route('/api/recipes')
 	.get(recipesController.allRecipesIndex)
 	.post(auth.ensureAuthenticated, recipesController.create);
+	// .put(auth.ensureAuthenticated, recipesController.updateRecipeSchema);
 
 
 router.route('/api/profile/recipes')

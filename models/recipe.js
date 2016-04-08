@@ -14,8 +14,8 @@ var RecipeSchema = new Schema({
   imageUrl: String,
   description: String,
   public: Boolean,
-  postedBy: String,
-  userId: {type: Schema.Types.ObjectId, ref: 'User'}
+  postedBy: String
+  // userId: {type: Schema.Types.ObjectId, ref: 'User'}
 });
 
 

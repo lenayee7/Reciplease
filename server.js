@@ -86,7 +86,8 @@ app.post('/auth/signup', function (req, res) {
       fullname: req.body.fullname,
       username: req.body.username,
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      profilePic: req.body.profilePic
     });
     user.save(function (err, result) {
       if (err) {

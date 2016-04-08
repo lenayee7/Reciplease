@@ -1,7 +1,7 @@
 <div class="userInfo">
   <h3 class="text-center">{{main.currentUser().fullname}}</h3>
   <!-- <div class="text-left"> -->
-    <img ng-src="{{main.currentUser().username}}" alt="Profile Pic" class="img-circle">
+    <img ng-src="{{main.currentUser().profilePic}}" alt="Profile Pic" class="img-circle">
     <p><strong>Username:</strong> {{main.currentUser().username}}</p>
     <p><strong>Email:</strong> {{main.currentUser().email}}</p>
     <p><strong>Joined:</strong> {{main.currentUser().created | date:'MMM dd, yyyy'}}</p>

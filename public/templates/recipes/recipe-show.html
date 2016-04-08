@@ -35,7 +35,7 @@
 
 <!-- Hidden Edit Recipe Form -->
 
-<form ng-show="recshow.showEditForm" ng-submit="recshow.updateRecipe(recipe)">
+<form ng-show="recshow.showEditForm" ng-submit="recshow.updateRecipe(recipe)" >
 	<h1>Edit {{recipe.title}}</h1>
 	
 	 <div class="form-group">
@@ -70,4 +70,5 @@
 		<span ng-click="recshow.deleteRecipe()" class="glyphicon glyphicon-trash delete_btn btn btn-default">Deleting </span>
 
 </form>
+
 

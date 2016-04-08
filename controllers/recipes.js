@@ -95,81 +95,60 @@ var recipesController = {
 		var id = req.user
 		var recipeId = req.params.recipe_id
 		var title = req.body.title
-		// var ingredients = req.body.ingredients
-		// var instructions = req.body.instructions
-		// var category = req.body.category
-			// console.log("Req.user from udpate ".bgBlue, id); 
-			// console.log("Req.params.recipeId from udpate ".bgBlue, recipeId);
-	  User.findOne({_id: id}, function(err, user) {
-			user.recipes.forEach(function(recipe) {
-				// console.log("The recipe._id ".bgBlue, recipe._id); 
-				// console.log("The recipeId ".bgGreen, recipeId); 
-				if(recipe._id == recipeId) {
-					recipe.title = title || "";
-					console.log("req.body.title".bgGreen, title); 
-					// Recipe.findOne({_id: recipeId}, function(err, foundRecipe) {
-					// 		console.log("Found recipe".bgBlue, foundRecipe); 
-					// 	if(err) {
-					// 		console.log("ERROR", err); 
-					// 	} else {
-					// 		foundRecipe.title = title || "";
-					// 		console.log("req.body.title".bgGreen, title); 
-					// 		recipe.save(function(err, savedRecipe) {
-					// 			if(err) {
-					// 		console.log("Error".bgRed, error); 
-					// 			} else {
-					// 				console.log("saved recipe".bgMagenta, savedRecipe); 
-					// 				// res.send(recipe);
-					// 			}
 
-					// 		});
-					// 	}
-
-					// });
-					
-				}
-			});
-
-			user.save(function(err, user) {
-				// Recipe.findOne({_id: recipeId}, function(err, recipe) {
-				// 	recipe.title = req.body.title;
-				// 	recipe.save(function(err, recipe) {
-						if(err) {
-							console.log("Error".bgRed, error); 
-						} else {
-							console.log("saved user with updated recipes".bgMagenta, user); 
-							// res.send(recipe);
-						}
-
-				// 	});
-				// });
-			});
-
+		// console.log("Req.user from udpate ".bgBlue, id); 
+		console.log("Req.params.recipeId from udpate ".bgBlue, recipeId);
+		 Recipe.findOne({_id: recipeId}, function(err, recipe) {
+				console.log("Found recipe".bgBlue, recipe); 
+			if(err) {
+				console.log("ERROR", err); 
+			} else {
+				recipe.title = title || "";
+				// console.log("req.body.title".bgGreen, title); 
+				recipe.save(function(err, savedRecipe) {
+					console.log("saved Recipe ".bgMagenta, savedRecipe); 
+					if(err) {
+						console.log("Error".bgRed, error); 
+					} else {
+						User.findOne({_id: id}, function(err, user) {
+							if(err) {
+								console.log("Error".bgRed, error); 
+							} else {
+								// var foundRecipe = user.recipes.id(recipeId);
+								// foundRecipe = savedRecipe;
+								// console.log("RECIPE".bgGreen, recipe); 
+								// console.log("SAVEDRECIPE".bgGreen, savedRecipe); 
+								user.save(function(err, user) {
+									if(err) {
+										console.log("Error".bgRed, error); 
+									} else {
+										console.log("User RECIPE ARRay UPDATED ".bgYellow, user); 
+									}
+								});
+								// user.recipes.forEach(function(recipe) {
+								// 	if(recipe._id == recipeId) {
+								// 			console.log("recipe._id", recipe._id);
+								// 			console.log("recipeId".bgCyan, recipeId);  
+								// 		recipe = savedRecipe
+								// 		console.log("What is recipe nowww?".bgYellow, recipe); 
+								// 		console.log("What is the saved recipe nowww".bgGreen, savedRecipe); 
+								// 			// console.log("What is recipe in foreach loop".bgGreen, recipe); 
+								// 	}
+								// 	// user.save(function(err, user) {
+								// 	// 	if(err) {
+								// 	// 		console.log("Error".bgRed, error); 
+								// 	// 	} else {
+								// 	// 		console.log("User RECIPE ARRay UPDATED ".bgYellow, user); 
+								// 	// 	}
+								// 	// });
+								// });
+							}
+						});
+					}
+				});
+			}
 		});
-		// Recipe.findById(recipeId, function(err, foundRecipe) {
-		// 	if(err) {
-		// 		console.log("Error".bgRed, err); 
-		// 	} else {
-		// 			console.log("Found Recipe".bgYellow, foundRecipe); 
-		// 			// if(title) foundRecipe.title = title; 
-		// 			foundRecipe.title = title || "";
-		// 			// if(ingredients) foundRecipe.ingredients = ingredients;
-		// 			// if(instructions) foundRecipe.instructions = instructions;
-		// 			// if(category) foundRecipe.category = category;
-
-		// 			foundRecipe.save(function(err, updatedRecipe) {
-		// 				if(err) {
-		// 					console.log("Error".bgRed, err); 
-		// 				} else {
-		// 					console.log("Sending this UPDATEDrecipe back ".bgMagenta, updatedRecipe); 
-		// 					res.send(updatedRecipe)
-		// 				}
-		// 			});
-		// 	}	
-			
-		// });
-	}					
-				
+	},
 
 
 }

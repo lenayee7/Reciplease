@@ -17,7 +17,7 @@ function recipeShowCtrl ($scope, $http, $stateParams, $state) {
 	function getRecipe (recipe) {
 		var recipeId = $stateParams.recipeId
 			// console.log("the state params recipe id ", recipeId); 
-		var url = 'api/profile/recipes/' + recipeId;
+		var url = '/api/profile/recipes/' + recipeId;
 			// console.log("url ", url); 
 		$http
 			.get(url)
@@ -28,9 +28,11 @@ function recipeShowCtrl ($scope, $http, $stateParams, $state) {
 	}
 
 	function updateRecipe (recipe) {
+		vm.newRecipe = recipe;
+		console.log('recipe', recipe);
 		var recipeId = $stateParams.recipeId
-			console.log("the state params updated recipe id ", recipeId); 
-			var url = 'api/profile/recipes/' + recipeId;
+			// console.log("the state params updated recipe id ", recipeId); 
+			var url = '/api/profile/recipes/' + recipeId;
 
 		$http
 			.put(url, vm.newRecipe)
@@ -39,8 +41,10 @@ function recipeShowCtrl ($scope, $http, $stateParams, $state) {
 					console.log("Am I hitting update?"); 
 				$scope.recipe = response.data;
 				$state.go('recipeshow');
+				vm.showEditForm = false;
 		});
 	}	
+
 
 }
 

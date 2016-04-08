@@ -35,7 +35,7 @@ index: function(req, res) {
  },
 
 create: function(req, res) {
-    
+  
   var newUser = new User(req.body);
     console.log("A New User".green, newUser); 
 
