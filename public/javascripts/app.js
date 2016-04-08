@@ -88,6 +88,9 @@ function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
      templateUrl: 'templates/recipes/recipe-box.html',
      controller: 'userRecipeCtrl',
      controllerAs: 'userrec'
+     // resolve: {
+     //    getUserRecipes: getUserRecipes
+     //  }
     })
 
     .state('recipeshow', {
@@ -96,6 +99,15 @@ function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
      controller: 'recipeShowCtrl',
      controllerAs: 'recshow'
     })
+
+    // function getUserRecipes ($http) {
+    //   $http
+    //     .get('/api/profile/recipes')
+    //     .then(function(response) {
+    //         console.log("User Recipes ", response.data); 
+    //      vm.userRecipes = response.data
+    //     })
+    // }
 
   
 
@@ -208,11 +220,13 @@ function LogoutController (Account, $location) {
 
 ProfileController.$inject = ["Account"]; // minification protection
 function ProfileController (Account) {
+var widget = uploadcare.initialize('#edit-profile-image');
 
   var vm = this;
   vm.new_profile = {}; // form data
 
   vm.updateProfile = function() {
+    vm.new_profile.profilePic = $('#edit-profile-image').val();
     Account
       .updateProfile(vm.new_profile)
       .then(function() {
@@ -237,8 +251,8 @@ function ProfileController (Account) {
 //////////////
 
 
-Account.$inject = ["$http", "$q", "$auth"]; // minification protection
-function Account($http, $q, $auth) {
+Account.$inject = ["$http", "$q", "$auth", "$http"]; // minification protection
+function Account($http, $q, $auth, $http) {
   var self = this;
   self.user = null;
 

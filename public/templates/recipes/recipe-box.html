@@ -1,4 +1,4 @@
-<div>
+<div ng-init="getUserRecipes()">
 	<h1>{{main.currentUser().fullname}}'s Recipe Box</h1>
 		<div>
 			<button ui-sref="newRecipe" class="createRecipeBtn btn btn-block btn-info">Create Recipe</button>
@@ -13,8 +13,9 @@
 	    <div class="col-xs-8 text-left">
 
 		    <a ng-href="/profile/recipes/{{recipe._id}}"><h5 class="recipe_title_link"><strong class="recipe_title"><span class="glyphicon glyphicon-heart"></span></strong>{{recipe.title}}</h5></a>
+		    <p><strong>Description:</strong> {{recipe.description}}</p>
 		    <p><strong>Category:</strong> {{recipe.category}}</p>
-		    <p><pre><strong>Ingredients:<br></strong>{{recipe.ingredients}}</pre></p>
+		    <p><pre class="pre-ingredients"><strong>Ingredients:<br></strong>{{recipe.ingredients}}</pre></p>
 		   <!--  <p><strong>Instructions:</strong> <pre>{{recipe.instructions}}</pre></p> -->
 		    <p><strong>Servings:</strong> {{recipe.servings}}</p>
 	       <!-- <a ng-ref="{{recipe.recipeUrl}}"><strong>{{recipe.title}}</strong></a> -->

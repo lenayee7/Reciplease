@@ -92,9 +92,15 @@ var recipesController = {
 		// target the recipe by the recipe_id
 		// update the recipe
 		// save the user
-		var id = req.user
-		var recipeId = req.params.recipe_id
-		var title = req.body.title
+		var id = req.user;
+		var recipeId = req.params.recipe_id;
+		var title = req.body.title;
+		var description = req.body.description;
+		var postedBy = req.body.postedBy;
+		var ingredients = req.body.ingredients;
+		var instructions = req.body.instructions;
+		var imageUrl = req.body.imageUrl;
+		var category = req.body.category;
 
 		// console.log("Req.user from udpate ".bgBlue, id); 
 		console.log("Req.params.recipeId from udpate ".bgBlue, recipeId);
@@ -104,51 +110,62 @@ var recipesController = {
 				console.log("ERROR", err); 
 			} else {
 				recipe.title = title || "";
+				recipe.description = description || "";
+				recipe.postedBy = postedBy || "";
+				recipe.ingredients = ingredients || "";
+				recipe.instructions = instructions || "";
+				recipe.imageUrl = imageUrl || "";
+				recipe.category = category || "";
+
+
 				// console.log("req.body.title".bgGreen, title); 
 				recipe.save(function(err, savedRecipe) {
 					console.log("saved Recipe ".bgMagenta, savedRecipe); 
 					if(err) {
 						console.log("Error".bgRed, error); 
-					} else {
-						User.findOne({_id: id}, function(err, user) {
-							if(err) {
-								console.log("Error".bgRed, error); 
-							} else {
-								// var foundRecipe = user.recipes.id(recipeId);
-								// foundRecipe = savedRecipe;
-								// console.log("RECIPE".bgGreen, recipe); 
-								// console.log("SAVEDRECIPE".bgGreen, savedRecipe); 
-								user.save(function(err, user) {
-									if(err) {
-										console.log("Error".bgRed, error); 
-									} else {
-										console.log("User RECIPE ARRay UPDATED ".bgYellow, user); 
-									}
-								});
-								// user.recipes.forEach(function(recipe) {
-								// 	if(recipe._id == recipeId) {
-								// 			console.log("recipe._id", recipe._id);
-								// 			console.log("recipeId".bgCyan, recipeId);  
-								// 		recipe = savedRecipe
-								// 		console.log("What is recipe nowww?".bgYellow, recipe); 
-								// 		console.log("What is the saved recipe nowww".bgGreen, savedRecipe); 
-								// 			// console.log("What is recipe in foreach loop".bgGreen, recipe); 
-								// 	}
-								// 	// user.save(function(err, user) {
-								// 	// 	if(err) {
-								// 	// 		console.log("Error".bgRed, error); 
-								// 	// 	} else {
-								// 	// 		console.log("User RECIPE ARRay UPDATED ".bgYellow, user); 
-								// 	// 	}
-								// 	// });
-								// });
-							}
-						});
 					}
+						console.log("SAVEDRECIPE".bgGreen, savedRecipe); 
+						res.send(savedRecipe)
 				});
 			}
 		});
 	},
+
+			// User.findOne({_id: id}, function(err, user) {
+			// 	if(err) {
+			// 		console.log("Error".bgRed, error); 
+			// 	} else {
+			// 		// var foundRecipe = user.recipes.id(recipeId);
+			// 		// foundRecipe = savedRecipe;
+			// 		// console.log("RECIPE".bgGreen, recipe); 
+			// 		// console.log("SAVEDRECIPE".bgGreen, savedRecipe); 
+			// 		user.save(function(err, user) {
+			// 			if(err) {
+			// 				console.log("Error".bgRed, error); 
+			// 			} else {
+			// 				console.log("User RECIPE ARRay UPDATED ".bgYellow, user); 
+			// 			}
+			// 		});
+			// 					// user.recipes.forEach(function(recipe) {
+			// 					// 	if(recipe._id == recipeId) {
+			// 					// 			console.log("recipe._id", recipe._id);
+			// 					// 			console.log("recipeId".bgCyan, recipeId);  
+			// 					// 		recipe = savedRecipe
+			// 					// 		console.log("What is recipe nowww?".bgYellow, recipe); 
+			// 					// 		console.log("What is the saved recipe nowww".bgGreen, savedRecipe); 
+			// 					// 			// console.log("What is recipe in foreach loop".bgGreen, recipe); 
+			// 					// 	}
+			// 					// 	// user.save(function(err, user) {
+			// 					// 	// 	if(err) {
+			// 					// 	// 		console.log("Error".bgRed, error); 
+			// 					// 	// 	} else {
+			// 					// 	// 		console.log("User RECIPE ARRay UPDATED ".bgYellow, user); 
+			// 					// 	// 	}
+			// 					// 	// });
+			// 					// });
+			// 				}
+			// 			});
+	
 
 
 }

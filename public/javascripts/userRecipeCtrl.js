@@ -15,6 +15,8 @@ function userRecipeCtrl ($scope, $http, $stateParams) {
 	getUserRecipes();
 
 
+
+
 	function getUserRecipes () {
 		$http
 			.get('/api/profile/recipes')

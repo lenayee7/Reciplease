@@ -23,9 +23,12 @@
   <div class="form-group">
     <input type="text" ng-model="profile.new_profile.email" class="form-control" placeholder="Email" ngValue="main.currentUser().email">
   </div>
-  <div class="form-group">
-    <input type="password" ng-model="profile.new_user.password" class="form-control" placeholder="Password" ngValue="main.currentUser().password">
+   <div class="form-group">
+   <input id="edit-profile-image" type="hidden" name="picture" ng-model="profile.new_profile.profilePic" role="uploadcare-uploader" class="form-control" data-image-shrink="240x380" />
   </div>
+<!--   <div class="form-group">
+    <input type="password" ng-model="profile.new_user.password" class="form-control" placeholder="Password" ngValue="main.currentUser().password">
+  </div> -->
   <input type="submit" value="Update Profile" class="btn btn-block btn-info">
 <!--   <a href="#" ng-click="profile.deleteProfile(currentUser)"class="btn btn-default"><i class="fa fa-trash-o"></i> Delete Profile</a> -->
 </form>

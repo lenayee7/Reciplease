@@ -3,10 +3,10 @@
 	width:  30%;
 }
 
-/*.recipe_box_img {
+.recipe_box_img {
 	width: 80%;
 	min-height: 200px;
-}*/
+}
 
 #new-recipe-form {
 	font-family: Menlo,Monaco,Consolas,"CourierNew",monospace;
@@ -198,6 +198,9 @@ pre {
 	margin-left: 0;
 }
 
+.pre-ingredients {
+	width: 250px;
+}
 @media (max-width: 1210px) {
   
 }
