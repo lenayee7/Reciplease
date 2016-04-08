@@ -9,8 +9,9 @@ var express 	   	= require('express'),
 	path 			      = require('path'),
 	logger 			    = require('morgan'),
   color           = require('colors'),
+  // session         = require("express-session"),
 
-  routes 					= require('./config/routes')
+  routes 					= require('./config/routes'),
 	User 			  		= require('./models/user');
 
 // require and load dotenv
@@ -27,6 +28,9 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname + '/views'));
 app.use(express.static(__dirname + '/public'));
 
+// require and load dotenv
+require('dotenv').load();
+
 //routes
 app.use(routes);
 
@@ -34,13 +38,15 @@ app.use(routes);
  * API Routes
  */
 
-app.get('/api/me', auth.ensureAuthenticated, function (req, res) {
-  User.findById(req.user, function (err, user) {
-    res.send(user.populate('posts'));
-  });
-});
+// 
 
-app.put('/api/me', auth.ensureAuthenticated, function (req, res) {
+app.get('/api/profile', auth.ensureAuthenticated, function (req, res) {
+   User.findById(req.user, function (err, user) {
+     res.send(user.populate('recipes'));
+   });
+ });
+
+app.put('/api/profile', auth.ensureAuthenticated, function (req, res) {
   User.findById(req.user, function (err, user) {
       console.log("Not updated yet, ".bgGreen, user); 
     if (!user) {
@@ -56,16 +62,16 @@ app.put('/api/me', auth.ensureAuthenticated, function (req, res) {
   });
 });
 
-app.delete('/api/me', function(req,res) {
-    console.log("DELETE SERVER"); 
-  User.findById(req.user, function(err, user) {
-    if(err) {
-      console.log("ERROR".bgRed, err); 
-    }
-      console.log("removing:", user); 
-  })
+// app.delete('/api/me', function(req,res) {
+//     console.log("DELETE SERVER"); 
+//   User.findById(req.user, function(err, user) {
+//     if(err) {
+//       console.log("ERROR".bgRed, err); 
+//     }
+//       console.log("removing:", user); 
+//   })
 
-})
+// })
 
 /*
  * Auth Routes
@@ -80,7 +86,8 @@ app.post('/auth/signup', function (req, res) {
       fullname: req.body.fullname,
       username: req.body.username,
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      profilePic: req.body.profilePic
     });
     user.save(function (err, result) {
       if (err) {
@@ -116,7 +123,6 @@ app.post('/auth/login', function (req, res) {
 app.get('*', function (req, res) {
   res.render('index');
 });
-
 
 // app.get(['/', '/signup', '/login', '/profile'], function (req, res) {
 //   res.render('index');

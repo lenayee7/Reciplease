@@ -1,0 +1,38 @@
+<div>
+	<h1>Recipe Box - User recipes only</h1>
+		<div>
+			<button ui-sref="newRecipe" class="createRecipeBtn btn btn-block btn-info">Create Recipe</button>
+		</div>
+
+	<div ng-repeat="recipe in userrec.userRecipes">
+	  <div class="row col-md-4">
+	    <div class="row col-xs-12">
+	      <img ng-src="{{recipe.imageUrl}}" alt="Recipe Image" class="img-responsive recipe_box_img">
+	    </div>
+	    <!-- {{recipe._id}} -->
+	    <div class="col-xs-8 text-left">
+
+		    <a ng-href="/profile/recipes/{{recipe._id}}"><h5><strong>Title: </strong>{{recipe.title}}</h5></a>
+		    <p><strong>Category:</strong> {{recipe.category}}</p>
+		    <p><strong>Ingredients:</strong><pre>{{recipe.ingredients}}</pre></p>
+		   <!--  <p><strong>Instructions:</strong> <pre>{{recipe.instructions}}</pre></p> -->
+		    <p><strong>Servings:</strong> {{recipe.servings}}</p>
+	       <!-- <a ng-ref="{{recipe.recipeUrl}}"><strong>{{recipe.title}}</strong></a> -->
+		 <!--    <p><strong>Created at:</strong>{{recipe.created | date:'MMM dd, yyyy'}}</p> -->
+
+	    </div>
+	  </div>
+ </div>
+		
+ </div>
+
+
+<!-- 		{{rec}} -->
+
+<!-- <h1>ALL Recipes</h1>
+<div ng-repeat="recipe in rec.allRecipes">
+<h1>EACH RECIPE</h1> -->
+	<!-- <div ng-repeat="rec in recipe"> -->
+		<!-- <h2> recipe {{rec.title}} </h2> -->
+	<!-- <div> -->
+	

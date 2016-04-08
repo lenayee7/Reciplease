@@ -1,6 +1,7 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     bcrypt = require('bcryptjs');
+var RecipeSchema = require('./recipe').schema;
 
 var userSchema = new Schema({
   created: { type: Date },
@@ -10,12 +11,13 @@ var userSchema = new Schema({
   password: { type: String, select: false },
   fullname: String,
   profilePic: String,
-  recipeId: {type: Schema.Types.ObjectId, ref: 'Reccipe'},
+  recipes: [RecipeSchema]
+  // recipeId: {type: Schema.Types.ObjectId, ref: 'Recipe'},
 
 });
 
 userSchema.pre('save', function (next) {
-  // set created and updated
+  // set created and updated2
   now = new Date();
   this.updated = now;
   if (!this.created) {

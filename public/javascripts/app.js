@@ -1,6 +1,6 @@
 console.log('what')
-angular
-  .module('RecipeApp', ['ui.router', 'ngResource', 'satellizer', 'RecipesCtrl'])
+var app = angular
+  .module('RecipeApp', ['ui.router', 'ngResource', 'satellizer', 'RecipeFactory'])
   .controller('MainController', MainController)
   .controller('HomeController', HomeController)
   .controller('LoginController', LoginController)
@@ -69,7 +69,35 @@ function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
         loginRequired: loginRequired
       }
     })
+    .state('newRecipe', {
+      url: '/profile/recipes/new',
+      templateUrl: 'templates/recipes/new-recipe.html',
+      controller: 'RecipesCtrl',
+      controllerAs: 'rec'
+    })
 
+    .state('allRecipes', {
+     url: '/recipes',
+     templateUrl: 'templates/recipes/recipe-index.html',
+     controller: 'RecipesCtrl',
+     controllerAs: 'rec'
+    })
+
+    .state('recipes', {
+     url: '/profile/recipes',
+     templateUrl: 'templates/recipes/recipe-box.html',
+     controller: 'userRecipeCtrl',
+     controllerAs: 'userrec'
+    })
+
+    .state('recipeshow', {
+     url: '/profile/recipes/:recipeId',
+     templateUrl: 'templates/recipes/recipe-show.html',
+     controller: 'recipeShowCtrl',
+     controllerAs: 'recshow'
+    })
+
+  
 
     function skipIfLoggedIn($q, $auth) {
       var deferred = $q.defer();
@@ -103,7 +131,6 @@ function MainController (Account) {
   vm.currentUser = function() {
    return Account.currentUser();
   }
-
 }
 
 HomeController.$inject = ["$http"]; // minification protection
@@ -135,8 +162,6 @@ function HomeController ($http) {
 }
 
 
-
-
 LoginController.$inject = ["Account", "$location"]; // minification protection
 function LoginController (Account, $location) {
   var vm = this;
@@ -147,7 +172,7 @@ function LoginController (Account, $location) {
       .login(vm.new_user)
       .then(function(){
          vm.new_user = {};
-         $location.path('/profile');
+         $location.path('/profile/recipes');
       })
   };
 }
@@ -279,7 +304,7 @@ function Account($http, $q, $auth) {
     getProfile().then(
       function onSuccess(response) {
         self.user = response.data;
-          console.log("Current User right now is... ", self.user); 
+          // console.log("Current User right now is... ", self.user); 
         deferred.resolve(self.user);
       },
 
@@ -295,14 +320,14 @@ function Account($http, $q, $auth) {
   }
 
   function getProfile() {
-    return $http.get('/api/me');
+    return $http.get('/api/profile');
   }
 
   function updateProfile(profileData) {
       console.log("profiledata", profileData);
     return (
       $http
-        .put('/api/me', profileData)
+        .put('/api/profile', profileData)
         .then(
           function (response) {
             self.user = response.data;

@@ -1,1 +1,43 @@
-recipe-index.html
+<div>
+	<h1>Recipe Community</h1>
+	<p>If you like what you see...guess you should <a class="underline" ui-sref="signup">Sign up</a></p>
+</div>
+<div id="search">
+  <h3 id="search_h3">Search:<input class="form-control" placeholder="Search Appetizers, Dessert, Main dish, Side dish" ng-model="query"></h3>
+  <p>Sort by:</p>
+  <select ng-model="orderProp">
+    <option value="name">Alphabetical</option>
+    <option value="age">Newest</option>
+  </select>
+</div>
+<hr>
+
+<div class="containter"ng-repeat="recipe in rec.allRecipes | filter:query ">
+  <div class="panel panel-default">
+    <div>
+      <div class="panel-body left">
+       <h5><strong>{{recipe.title}}</strong></h5>
+        <img ng-src="{{recipe.imageUrl}}" alt="Recipe Image" class=" recipe_img">
+      </div>
+      <div class="panel-body text-left">
+  	    <p><strong>Category:</strong> {{recipe.category}}</p>
+        <p><strong>Recipe By:</strong> {{recipe.postedBy}}</p>
+      </div>
+      <div>
+        <p class="panel body pDescription after-box"><strong>Description:</strong> {{recipe.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- 		{{rec}} -->
+
+<!-- <h1>ALL Recipes</h1>
+<div ng-repeat="recipe in rec.allRecipes">
+<h1>EACH RECIPE</h1> -->
+	<!-- <div ng-repeat="rec in recipe"> -->
+		<!-- <h2> recipe {{rec.title}} </h2> -->
+	<!-- <div> -->
+	

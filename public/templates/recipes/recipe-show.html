@@ -1,0 +1,74 @@
+
+<a ng-href="/profile/recipes"><h4 class="text-left"><span class="glyphicon glyphicon-backward"></span> Back</h4></a>
+
+<div class="text-right">
+	<a href="#" ng-click="recshow.showEditForm=true" ng-hide="recshow.showEditForm" class="btn btn-default"><span class="glyphicon glyphicon-edit">Editing </span></a>
+</div>
+
+	<div>
+	  <div class="recipe_box_div_show row">
+	    <div class="col-xs-4">
+	      <img ng-src="{{recipe.imageUrl}}" alt="Recipe Image" class="img-responsive">
+	    </div>
+	    <!-- {{recipe._id}} -->
+	    <div class="col-xs-8 text-left">
+		    <h5><strong>Title: </strong>{{recipe.title}}</h5>
+		    <p><strong>Category:</strong> {{recipe.category}}</p>
+		    <p><strong>Ingredients:</strong><pre class="pre_show">{{recipe.ingredients}}</pre></p>
+		    <p><strong>Instructions:</strong> <pre class="pre_show">{{recipe.instructions}}</pre></p>
+		    <p><strong>Servings:</strong> {{recipe.servings}}</p>
+	    </div>
+	  </div>
+ </div>
+
+<!-- <h2 class="h2recipeShow">{{recipe.title}}</h2>
+<p>{{recipe.category}}</p>
+<div class="container-fluid">
+	<div class="recipe_show_div">
+
+		<img ng-src="{{recipe.imageUrl}}" class="img-responsive left recipe_img" alt="Recipe Image">
+		<div class="ingredients_content"><strong>Ingredients</strong></br>{{recipe.ingredients}}</div>
+
+		<div class="col-xs-6 recipe_show_div_instructions"><strong>Instructions</strong></br>{{recipe.instructions}}</div>
+ </div>
+</div> -->
+
+<!-- Hidden Edit Recipe Form -->
+
+<form ng-show="recshow.showEditForm" ng-submit="recshow.updateRecipe(recipe)" >
+	<h1>Edit {{recipe.title}}</h1>
+	
+	 <div class="form-group">
+	  <input type="text" class="form-control" placeholder="Title" ng-model="recshow.newRecipe.title" ng-value="recipe.title">
+	 </div>
+	
+<!-- 	 <div class="form-group">
+	    <textarea type="text" rows="7" cols="50" ng-model="recshow.newRecipe.ingredients" ng-value="recipe.ingredients">
+	    </textarea>
+	 </div>
+
+   <div class="form-group">
+	    <p><label>Instructions</label></p>
+	    <textarea type="text" rows="7" name="instructions" cols="50" ng-model="recshow.newRecipe.instructions" value="recipe.instructions">
+	    </textarea>
+	  </div> -->
+
+	  <!-- <div class="form-group">
+	    <label for="category">Category</label>
+		  <select ng-model="rec.recipe.category"> -->
+	      <!-- <option ng-value="Appetizers" selected>Appetizers</option>
+	      <option ng-value="Breads">Breads</option>
+	      <option ng-value="SoupsSalads">Soups & Salads</option> -->
+	      <!-- <option ng-model="recshow.newRecipe.category" ng-value="{{recipe.category}}">Dessert</option> -->
+	 <!--      <option ng-model="recshow.newRecipe.category" value="side-dish">Side Dish</option>
+	      <option ng-model="recshow.newRecipe.category" value="main-dish">Main Dish</option> -->
+	<!--     </select>
+	   </div> -->
+   <input type="submit" value="Update Recipe" class="btn btn-info">
+
+	  <button ng-click="recshow.showEditForm=false" class="btn btn-default">Cancel</button>
+		<span ng-click="recshow.deleteRecipe()" class="glyphicon glyphicon-trash delete_btn btn btn-default">Deleting </span>
+
+</form>
+
+
