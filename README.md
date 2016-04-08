@@ -31,3 +31,11 @@ HTML5/CSS
 1. Fork repo
 2. Make contributions
 3. Submit a pull request 
+
+SHOUT OUTS
+* Squad Leader - Ilias 
+* Derek, Szeto, Daniel
+
+SHOUT OUT to WDI 26
+Instructors: Ilias, Ben, Alex, Dani
+All Classmates
