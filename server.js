@@ -56,6 +56,7 @@ app.put('/api/profile', auth.ensureAuthenticated, function (req, res) {
     user.fullname = req.body.fullname || user.fullname;
     user.username = req.body.username || user.username;
     user.email = req.body.email || user.email;
+    user.profilePic = req.body.profilePic || user.profilePic;
     user.save(function(err) {
         console.log("UpdatedUser, ".bgYellow, user); 
       res.send(user);

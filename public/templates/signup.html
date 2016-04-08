@@ -14,12 +14,12 @@
   <div class="form-group">
     <input type="password" ng-model="sc.new_user.password" class="form-control" placeholder="Password">
   </div>
-  <div class="form-group">
+ <!--  <div class="form-group">
     <input type="text" ng-model="sc.new_user.profilePic" class="form-control" placeholder="Profile Pic">
-  </div>
-<!--   <div class="form-group">
-   <input type="hidden" name="picture" ng-model="sc.new_user.profilePic" role="uploadcare-uploader" class="form-control" data-image-shrink="240x380" />
   </div> -->
+  <div class="form-group">
+   <input id="profile-image" type="hidden" name="picture" ng-model="sc.new_user.profilePic" role="uploadcare-uploader" class="form-control" data-image-shrink="240x380" />
+  </div>
   <input type="submit" value="Sign Up" class="btn btn-block btn-info">
 </form>
 <br>

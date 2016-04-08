@@ -179,10 +179,13 @@ function LoginController (Account, $location) {
 
 SignupController.$inject = ["Account", "$location"]; // minification protection
 function SignupController (Account, $location) {
+  var widget = uploadcare.initialize('#profile-image');
   var vm = this;
   vm.new_user = {}; // form data
 
+
   vm.signup = function() {
+    vm.new_user.profilePic = $('#profile-image').val();
     Account
       .signup(vm.new_user)
       .then(
