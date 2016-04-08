@@ -1,22 +1,16 @@
 <div>
 	<h1>Recipe Community</h1>
-	<p>If you like what you see...guess you should <a class="underline" ui-sref="signup">Sign up</a></p>
+	<!-- <p>If you like what you see...guess you should <a class="underline" ui-sref="signup">Sign up</a></p> -->
 </div>
 <div id="search">
-  <h3 id="search_h3">Search:<input class="form-control" placeholder="Search Appetizers, Dessert, Main dish, Side dish" ng-model="query"></h3>
-  <p>Sort by:</p>
-  <select ng-model="orderProp">
-    <option value="name">Alphabetical</option>
-    <option value="age">Newest</option>
-  </select>
+  <h3 id="search_h3"><strong>Search:</strong><input id="search-bar" class="form-control" placeholder=" Appetizers, Dessert, Main Dish, Side Dish" ng-model="query"></h3>
 </div>
-<hr>
 
 <div class="containter"ng-repeat="recipe in rec.allRecipes | filter:query ">
   <div class="panel panel-default">
     <div>
-      <div class="panel-body left">
-       <h5><strong>{{recipe.title}}</strong></h5>
+      <div class="panel-body">
+       <h5 class="recipe-index-title">{{recipe.title}}</h5>
         <img ng-src="{{recipe.imageUrl}}" alt="Recipe Image" class=" recipe_img">
       </div>
       <div class="panel-body text-left">
@@ -24,7 +18,7 @@
         <p><strong>Recipe By:</strong> {{recipe.postedBy}}</p>
       </div>
       <div>
-        <p class="panel body pDescription after-box"><strong>Description:</strong> {{recipe.description}}</p>
+        <p class="body pDescription after-box"><strong>Description:</strong> {{recipe.description}}</p>
       </div>
     </div>
   </div>

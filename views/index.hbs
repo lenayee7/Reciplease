@@ -21,6 +21,7 @@
   <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
 
   <!-- GOOGLE FONTS -->
+  <link href='https://fonts.googleapis.com/css?family=Lobster|Arvo|Bree+Serif|Chewy|Acme|Satisfy' rel='stylesheet' type='text/css'>
    <link href='https://fonts.googleapis.com/css?family=Montserrat|Alegreya+Sans|Arvo|Varela+Round|Dancing+Script' rel='stylesheet' type='text/css'>
 
   <!-- UPLOAD CARE -->
@@ -76,7 +77,7 @@
           <li ng-show="!main.currentUser()"><a ui-sref="signup">Sign Up</a></li>
           <li ng-show="!main.currentUser()"><a ui-sref="login">Log In</a></li>
           <li ng-show="main.currentUser()"><a ui-sref="recipes">Recipe Box</a></li>
-          <li ng-show="main.currentUser()"><a ui-sref="profile">\{{main.currentUser().fullname}}</a></li>
+          <li ng-show="main.currentUser()"><a ui-sref="profile">\{{main.currentUser().fullname}}</a></li><img class="profile-circle img-circle" src=\{{main.currentUser().profilePic}}>
           <li ng-show="main.currentUser()"><a ui-sref="logout">Log Out</a></li>
         </ul>
       </div>

@@ -10,34 +10,44 @@
 }*/
 
 body {
-	color: #DE5547;
+	color: #9C1010;
 	background-image: url("http://www.wallpaper-inc.com/product_files/chi-la036714vp/chi-la036714vp.jpg");
 	/*background-image: url("https://s-media-cache-ak0.pinimg.com/736x/f1/89/85/f189852fa838b839fcd15e497f33707b.jpg");*/
 /*	background-color: #6F5682;*/
 	background-color: white;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Satisfy', cursive;
+	font-size: 1.6em;
+}
+
+.cover-img {
+	width: 350px;
+	height: 260px;
 }
 
 .navbar-default .navbar-nav>li>a {
-	color: #9C1010; 
-	font-size: 1.4em;
-	font-family: 'Montserrat', sans-serif;
+	color: #3B1A48; 
+	font-size: 1.7em;
+	font-family: 'Satisfy', cursive;
+	/*font-family: 'Acme', sans-serif;*/
+	/*font-family: 'Montserrat', sans-serif;*/
 }
 
 .navbar-default .navbar-nav>li>a:hover {
-	color: #856213;
+	color: #A61212;
 	font-size: 1.5em;
 }
 
 .navbar-default {
+	background-color: #BA3B2D;
 	border-bottom: 2px solid #A61212;
 }
 
 .navbar {
-	/*border: 3px solid #E3DE40;*/
+	/*background-color: #99291D;*/
+	border: 6px solid #99291D;
 	background-image: url("http://www.wallpaper-inc.com/product_files/chi-la036714vp/chi-la036714vp.jpg");
 	/*background-size: 100% 10/0%;*/
-	padding: 2% 0;
+	padding: 1% 0;
 }
 
 .right-nav {
@@ -45,15 +55,17 @@ body {
 }
 
 #precipeLink {
-	color: #43206E;
+	color: #3B1A48;
+	font-weight: bold;
 	/*color: #0C7991;*/
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Arvo', serif;
+	/*font-family: 'Acme', sans-serif;*/
 	font-size: 2.5em;
 }
 
 #precipeLink:hover {
 	font-size: 2.7em;
-	color: #DEDE37;
+	color: #A61212;
 }
 
 /*HOMEPAGE*/
@@ -62,16 +74,18 @@ body {
 }
 
 #h1-precipes {
-	color: #43206E;
-	/*font-weight: bold;*/
-	/*font-family: 'Dancing Script', cursive;*/
-	font-family: 'Montserrat', sans-serif;
+	color: #3B1A48;
+	font-weight: bold;
+	font-family: 'Satisfy', cursive;
+	/*font-family: 'Arvo', serif;*/
 	font-size: 3em;
+	margin-bottom: 3%;
 }
 
 #p-home-content {
-	color: #43206E;
-	margin-top: 2%;
+	font-family: 'Acme', sans-serif;
+	color: #3B1A48;
+	margin-top: 5%;
 	font-size: 2em;
 }
 
@@ -104,26 +118,46 @@ a {
 }
 
 .form-control {
-	width: 60%;
+	width: 50%;
 	margin: 0 auto;
 }
 
 strong {
-	color: #43206E;
+	/*color: #38C2B7;*/
+	color: #3B1A48;
+	font-size: 1em;
+}
+
+.recipe-index-title {
+	font-size: 1.5em;
 }
 
 .createRecipeBtn {
-	background-color: #A61212;
+	background-color: #9C1010;
 	border: 0 solid white;
 	margin-bottom: 1%;
+	font-size: 1.5em;
 }
 
 .createRecipeBtn:hover {
-	background-color: #856213;
+	background-color: #E8E4D1;;
 }
 
 h1 {
 	color: #9C1010;
+}
+
+/*p {
+	font-size: 1.4em;
+}*/
+
+#search-bar {
+	background-color: #E8E4D1;
+	border: 2px solid #9C1010;
+	font-family: Menlo,Monaco,Consolas,"CourierNew",monospace;
+	font-size: .7em;
+	text-align: center;
+	padding: .5%;
 }
 /*////////HOME PAGE columns//////// */
 
@@ -137,10 +171,19 @@ h1 {
 /*Profile Page*/
 
 .userInfo {
-	text-align: left;
-	width: 25%;
+	/*text-align: left;*/
+	/*width: 25%;*/
 	margin: 0 auto;
 }
+
+.profile-circle {
+	width: 15%;
+}
+
+.navbar-right {
+	margin-left: 65%;
+}
+
 
 
 
