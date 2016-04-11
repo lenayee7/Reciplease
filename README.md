@@ -7,7 +7,12 @@ Reciplease is an app where you can create a home for your secret family recipes 
 By creating an account you will be able to browse full recipes on the Recipe Community and create your own recipes.
 
 ###Wireframes:
+<<<<<<< HEAD
 
+=======
+See Trello
+Heroku:  https://precipes.herokuapp.com
+>>>>>>> e38e6f42a61a07e31dfb5697e6ca7908fb040067
 ###User Stories: https://trello.com/b/0srq9hPN/reciplease
 
 ###Technologies Used
@@ -32,7 +37,7 @@ HTML5/CSS
 
 SHOUT OUTS
 * Squad Leader - Ilias 
-* Derek, Szeto, Daniel
+* Derek, Szeto, Daniel, Chini, Tashi
 
 SHOUT OUT to WDI 26
 Instructors: Ilias, Ben, Alex, Dani
