@@ -6,6 +6,7 @@ RecipesCtrl.$inject = ['$scope', 'Recipe', '$http', '$state', '$stateParams'];
  
 function RecipesCtrl ($scope, Recipe, $http, $state, $stateParams) {
 	 			// console.log("What is Recipe? ", Recipe); 
+ 			var widget = uploadcare.initialize('#recipe-image');
 			var vm = this;
 			$scope.orderProp = '-age';
 			// vm.updateRecipeSchema = updateRecipeSchema;
@@ -17,6 +18,7 @@ function RecipesCtrl ($scope, Recipe, $http, $state, $stateParams) {
 	  	//   $scope.recipes = Recipe.query();
 			// });
 			vm.createRecipe = function() {
+				vm.recipe.imageUrl = $('#recipe-image').val();
 				var newRecipe = Recipe.save(vm.recipe);
 				$scope.category = "Appetizer"
 					vm.recipe = {};

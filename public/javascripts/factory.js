@@ -19,7 +19,4 @@ angular.module('RecipeFactory', [])
 	// return {message: "OMg this is my factory"}
 }])
 
-// RecipeFactory.$inject = ['$resource'];
-// function RecipeFactory($resource) {
-// }
 console.log("Factory is working")

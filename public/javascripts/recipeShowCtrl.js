@@ -10,7 +10,7 @@ function recipeShowCtrl ($scope, $http, $stateParams, $state) {
 		vm.updateRecipe = updateRecipe;
 		vm.showEditForm = false;
 		// console.log("vm from recipe show vm is ", this); 
-	// $scope.hello = "Recipe Show Page working"
+		// $scope.hello = "Recipe Show Page working"
 			getRecipe();
 			// updateRecipe();
 
@@ -29,7 +29,7 @@ function recipeShowCtrl ($scope, $http, $stateParams, $state) {
 
 	function updateRecipe (recipe) {
 		vm.newRecipe = recipe;
-		console.log('recipe', recipe);
+			console.log('newrecipe as recipe', vm.newRecipe);
 		var recipeId = $stateParams.recipeId
 			// console.log("the state params updated recipe id ", recipeId); 
 			var url = '/api/profile/recipes/' + recipeId;

@@ -4,17 +4,17 @@
 
 	<form ng-submit="rec.createRecipe()" id="new-recipe-form">
 
-			 <div class="form-group">
-		    <label for="category">Category</label>
-			  <select ng-value="Appetizer" ng-model="rec.recipe.category">
-		      <option ng-value="Appetizers">Appetizers</option>
-		      <option ng-value="Breads">Breads</option>
-		      <option ng-value="SoupsSalads">Soups & Salads</option>
-		      <option ng-value="Dessert">Dessert</option>
-		      <option ng-value="Side-dish">Side Dish</option>
-		      <option ng-value="Main-dish">Main Dish</option>
-		    </select>
-		   </div>
+				<div class="form-group">
+		     <label for="category">Category</label>
+				   <select ng-value="Appetizer" ng-model="rec.recipe.category">
+			      <option ng-value="Appetizers">Appetizers</option>
+			      <option ng-value="Breads">Breads</option>
+			      <option ng-value="SoupsSalads">Soups & Salads</option>
+			      <option ng-value="Dessert">Dessert</option>
+			      <option ng-value="Side-dish">Side Dish</option>
+			      <option ng-value="Main-dish">Main Dish</option>
+				   </select>
+			  </div>
 
 			  <div class="form-group">
 			   <input type="text" class="form-control" placeholder="Title" ng-model="rec.recipe.title">
@@ -31,13 +31,16 @@
 			  </div>
 		
 
-			
 			  <div class="form-group">
 			    <input type="url" class="form-control" ng-model="rec.recipe.recipeUrl" placeholder="Recipe Url">
 			  </div>
-			  <div class="form-group">
+			 <!--  <div class="form-group">
 			    <input type="url" class="form-control" ng-model="rec.recipe.imageUrl" placeholder="Image Url">
+			  </div> -->
+		    <div class="form-group">
+				   <input id="recipe-image" type="hidden" name="picture" ng-model="rec.recipe.imageUrl" role="uploadcare-uploader" class="form-control upload-widget-button-open" data-image-shrink="240x380" />
 			  </div>
+
 			  <div class="form-group">
 			    <p><label>Instructions</label></p>
 			    <textarea rows="7" name="instructions" cols="50" ng-model="rec.recipe.instructions" value="instructions" placeholder="1. Do this...preheat to 350 degrees">

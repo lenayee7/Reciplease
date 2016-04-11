@@ -21,18 +21,6 @@
 	<a href="#" ng-click="recshow.showEditForm=true" ng-hide="recshow.showEditForm" class="btn btn-default"><span class="glyphicon glyphicon-edit">Editing </span></a>
 </div>
 
-<!-- <h2 class="h2recipeShow">{{recipe.title}}</h2>
-<p>{{recipe.category}}</p>
-<div class="container-fluid">
-	<div class="recipe_show_div">
-
-		<img ng-src="{{recipe.imageUrl}}" class="img-responsive left recipe_img" alt="Recipe Image">
-		<div class="ingredients_content"><strong>Ingredients</strong></br>{{recipe.ingredients}}</div>
-
-		<div class="col-xs-6 recipe_show_div_instructions"><strong>Instructions</strong></br>{{recipe.instructions}}</div>
- </div>
-</div> -->
-
 <!-- Hidden Edit Recipe Form -->
 
 <form ng-show="recshow.showEditForm" ng-submit="recshow.updateRecipe(recipe)" >

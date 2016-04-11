@@ -117,7 +117,6 @@ app.post('/auth/login', function (req, res) {
   });
 });
 
-
 /*
  * Catch All Route
  */
