@@ -7,19 +7,20 @@
 	      <img ng-src="{{recipe.imageUrl}}" alt="Recipe Image" class="recipe_image_show">
 	    </div>
 	    <!-- {{recipe._id}} -->
-	    <div class="col-xs-8 text-left">
+	    <div class="col-xs-12 text-left">
 		    <h5><strong>Title: </strong>{{recipe.title}}</h5>
 		    <p><strong>Category:</strong> {{recipe.category}}</p>
 		    <p><pre class="pre_show"><strong>Ingredients:</strong></br>{{recipe.ingredients}}</pre></p>
 		    <p><pre class="pre_show"><strong>Instructions:</strong></br>{{recipe.instructions}}</pre></p>
 		    <p><strong>Servings:</strong> {{recipe.servings}}</p>
+		    <p><a href="{{recipe.recipeUrl}}" target="_blank"><span class="glyphicon glyphicon-circle-arrow-right"></span> Click here for Recipe Link</a></p>
 	    </div>
 	  </div>
  </div>
-
+<!-- 
 <div>
 	<a href="#" ng-click="recshow.showEditForm=true" ng-hide="recshow.showEditForm" class="btn btn-default"><span class="glyphicon glyphicon-edit">Editing </span></a>
-</div>
+</div> -->
 
 <!-- Hidden Edit Recipe Form -->
 
