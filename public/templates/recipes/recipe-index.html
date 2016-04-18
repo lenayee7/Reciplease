@@ -6,11 +6,11 @@
   <h3 id="search_h3"><strong>Search:</strong><input id="search-bar" class="form-control" placeholder=" Appetizers, Dessert, Main Dish, Side Dish" ng-model="query"></h3>
 </div>
 
-<div ng-repeat="recipe in rec.allRecipes | filter:query ">
+<div ng-repeat="recipe in rec.allRecipes | filter:query">
   <div class="panel panel-default">
     <div>
       <div class="panel-body">
-       <h5 class="recipe-index-title">{{recipe.title}}</h5>
+        <a ng-href="/profile/recipes/{{recipe._id}}"<h5 class="recipe-index-title">{{recipe.title}}</h5></a>
         <img ng-src="{{recipe.imageUrl}}" alt="Recipe Image" class=" recipe_img">
       </div>
       <div class="panel-body text-left">
