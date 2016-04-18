@@ -7,9 +7,8 @@ By creating an account you will be able to browse full recipes on the Recipe Com
 
 ###Wireframes:
 See Trello https://trello.com/b/0srq9hPN/reciplease
-Heroku:  https://precipes.herokuapp.com
 
-###User Stories: https://trello.com/b/0srq9hPN/reciplease
+###Heroku:  https://precipes.herokuapp.com
 
 ###Technologies Used
 Bootstrap
