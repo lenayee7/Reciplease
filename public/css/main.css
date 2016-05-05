@@ -19,7 +19,7 @@ body {
 	/*background-image: url("https://s-media-cache-ak0.pinimg.com/736x/f1/89/85/f189852fa838b839fcd15e497f33707b.jpg");*/
 /*	background-color: #6F5682;*/
 	background-color: white;
-	font-family: 'Satisfy', cursive;
+	font-family: Menlo,Monaco,Consolas,"CourierNew",monospace;
 	font-size: 1.6em;
 }
 
@@ -27,7 +27,7 @@ body {
 	width: 350px;
 	height: 260px;
 }
-/*///////navbar///////*/
+/*///////NAVBAR///////*/
 
 .navbar-default .navbar-nav>li>a {
 	color: #3B1A48; 
@@ -158,10 +158,6 @@ h1 {
 	color: #9C1010;
 }
 
-/*p {
-	font-size: 1.4em;
-}*/
-
 #search-bar {
 	width: 60%;
 	background-color: #E8E4D1;
@@ -171,6 +167,7 @@ h1 {
 	text-align: center;
 	padding: .5%;
 }
+
 /*////////HOME PAGE columns//////// */
 
 #left_img_column {

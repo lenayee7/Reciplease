@@ -8,22 +8,24 @@
 	  <h3 id="search_h3"><strong>Search:</strong><input id="search-bar" class="form-control" placeholder=" Appetizers, Breads, Dessert, Main Dish, Side Dish" ng-model="query"></h3>
 	</div>
 
-	<div ng-repeat="recipe in userrec.userRecipes | filter:query">
-	  <div class="row col-md-4 col-md-6 rec_box_div padding-left">
-	    <div class="row col-xs-12">
-	      <img ng-src="{{recipe.imageUrl}}" alt="Recipe Image" class="img-responsive recipe_box_img">
-	    </div>
-	    <!-- {{recipe._id}} -->
-	    <div class="col-xs-10 padding-left text-left">
-
-		    <a ng-href="/profile/recipes/{{recipe._id}}"><h5 class="recipe_box_title_link"><strong class="recipe_title"><span class="glyphicon glyphicon-heart"></span></strong>{{recipe.title}}</h5></a>
-		    <p><strong>Description:</strong> {{recipe.description}}</p>
-		    <p><strong>Category:</strong> {{recipe.category}}</p>
-		    <p><pre class="pre-ingredients"><strong>Ingredients:<br></strong>{{recipe.ingredients}}</pre></p>
-		    <p><strong>Servings:</strong> {{recipe.servings}}</p>
-		   <!--  <p><strong>Instructions:</strong> <pre>{{recipe.instructions}}</pre></p> -->
-	    </div>
-	  </div>
- </div>
+<div class="container">
+	<div class="row col-md-12 community-page">
+		<div ng-repeat="recipe in userrec.userRecipes | filter:query">
+		  <div class="row col-md-4">
+		      <img ng-src="{{recipe.imageUrl}}" alt="Recipe Image" class="img-responsive recipe_box_img">
+		    <!-- </div> -->
+		    <!-- {{recipe._id}} -->
+			    <div class="col-xs-10 padding-left text-left">
+				    <a ng-href="/profile/recipes/{{recipe._id}}"><h5 class="recipe_box_title_link"><strong class="recipe_title"><span class="glyphicon glyphicon-heart"></span></strong>{{recipe.title}}</h5></a>
+				    <p><strong>Description:</strong> {{recipe.description}}</p>
+				    <p><strong>Category:</strong> {{recipe.category}}</p>
+				    <p><pre class="pre-ingredients"><strong>Ingredients:<br></strong>{{recipe.ingredients}}</pre></p>
+				    <p><strong>Servings:</strong> {{recipe.servings}}</p>
+				   <!--  <p><strong>Instructions:</strong> <pre>{{recipe.instructions}}</pre></p> -->
+			    </div>
+		  </div>
+		</div>
+	</div>
+</div>
 		
  </div>
