@@ -1,6 +1,5 @@
 <div>
 	<h1>Recipe Community</h1>
-	<!-- <p>If you like what you see...guess you should <a class="underline" ui-sref="signup">Sign up</a></p> -->
 </div>
 <div id="search">
   <h3 id="search_h3"><strong>Search:</strong><input id="search-bar" class="form-control" placeholder=" Appetizers, Breads, Dessert, Main Dish, Side Dish" ng-model="query"></h3>
@@ -9,6 +8,7 @@
 <div class="container col-md-12">
   <div class="row col-md-12 community-page">
     <div class="panel panel-default col-md-3 col-sm-4 col-xs-6" ng-repeat="recipe in rec.allRecipes | filter:query">
+      <div class="col-xs-12">
       <div class="panel-body">
         <a ng-href="/profile/recipes/{{recipe._id}}"><h5 class="recipe-index-title">{{recipe.title}}</h5></a>
         <img ng-src="{{recipe.imageUrl}}" alt="Recipe Image" class=" recipe_img">
@@ -19,6 +19,7 @@
       </div>
       <div>
         <p class="body pDescription after-box"><strong>Description:</strong> {{recipe.description}}</p>
+      </div>
       </div>
     </div>
   </div>

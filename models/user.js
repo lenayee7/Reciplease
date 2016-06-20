@@ -12,8 +12,6 @@ var userSchema = new Schema({
   fullname: String,
   profilePic: String,
   recipes: [RecipeSchema]
-  // recipeId: {type: Schema.Types.ObjectId, ref: 'Recipe'},
-
 });
 
 userSchema.pre('save', function (next) {

@@ -9,17 +9,13 @@
 	padding-left: 0px;
 }
 
-/*.padding-left {
-	padding-left: 5%;
-}*/
-
 body {
 	color: #9C1010;
 	background-image: url("http://www.wallpaper-inc.com/product_files/chi-la036714vp/chi-la036714vp.jpg");
 	/*background-image: url("https://s-media-cache-ak0.pinimg.com/736x/f1/89/85/f189852fa838b839fcd15e497f33707b.jpg");*/
 /*	background-color: #6F5682;*/
 	background-color: white;
-	font-family: Menlo,Monaco,Consolas,"CourierNew",monospace;
+	font-family: 'Nunito', sans-serif;
 	font-size: 1.6em;
 }
 
@@ -32,7 +28,7 @@ body {
 .navbar-default .navbar-nav>li>a {
 	color: #3B1A48; 
 	font-size: 1.7em;
-	font-family: 'Satisfy', cursive;
+	font-family: 'Nunito', sans-serif;
 	display: inline-block;
 }
 
@@ -63,14 +59,11 @@ body {
 #precipeLink {
 	color: #3B1A48;
 	font-weight: bold;
-	/*color: #0C7991;*/
-	font-family: 'Arvo', serif;
-	/*font-family: 'Acme', sans-serif;*/
-	font-size: 2.5em;
+	font-size: 2em;
 }
 
 #precipeLink:hover {
-	font-size: 2.7em;
+	font-size: 2.3em;
 	color: #A61212;
 }
 
@@ -82,14 +75,19 @@ body {
 #h1-precipes {
 	color: #99291D;
 	font-weight: bold;
-	font-family: Menlo,Monaco,Consolas,"CourierNew",monospace;
-	/*font-family: 'Arvo', serif;*/
+	font-family: 'Nunito', sans-serif;
 	font-size: 3em;
 	margin-bottom: 3%;
 }
 
+.home-content-div {
+	font-size: 1.3em;
+	margin: 5% auto 0;
+	width: 60%;
+}
+
 #p-home-content {
-	font-family: Menlo,Monaco,Consolas,"CourierNew",monospace;
+	font-family: 'Nunito', sans-serif;
 	margin-top: 5%;
 	font-size: 1.5em;
 }

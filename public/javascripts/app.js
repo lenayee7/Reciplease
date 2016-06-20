@@ -1,4 +1,4 @@
-console.log('what')
+
 var app = angular
   .module('RecipeApp', ['ui.router', 'ngResource', 'satellizer', 'RecipeFactory'])
   .controller('MainController', MainController)
@@ -24,7 +24,6 @@ function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
     requireBase: false
   });
 
-  // for any unmatched URL redirect to /
   $urlRouterProvider.otherwise("/");
 
   $stateProvider
@@ -88,9 +87,6 @@ function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
      templateUrl: 'templates/recipes/recipe-box.html',
      controller: 'userRecipeCtrl',
      controllerAs: 'userrec'
-     // resolve: {
-     //    getUserRecipes: getUserRecipes
-     //  }
     })
 
     .state('recipeshow', {
@@ -99,16 +95,6 @@ function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
      controller: 'recipeShowCtrl',
      controllerAs: 'recshow'
     })
-
-    // function getUserRecipes ($http) {
-    //   $http
-    //     .get('/api/profile/recipes')
-    //     .then(function(response) {
-    //         console.log("User Recipes ", response.data); 
-    //      vm.userRecipes = response.data
-    //     })
-    // }
-
   
 
     function skipIfLoggedIn($q, $auth) {
@@ -149,7 +135,7 @@ HomeController.$inject = ["$http"]; // minification protection
 function HomeController ($http) {
   var vm = this;
   vm.posts = [];
-  vm.new_post = {}; // form data
+  vm.new_post = {};
 
   $http.get('/api/posts')
     .then(function (response) {
@@ -230,13 +216,11 @@ var widget = uploadcare.initialize('#edit-profile-image');
     Account
       .updateProfile(vm.new_profile)
       .then(function() {
-          console.log("profile controller", vm.new_profile); 
     // On success, clear the form
         vm.showEditForm = false;
       });
   };
 
-// TODO NEED TO DO- user ID is not defined
   vm.deleteProfile = function(currentUser) {
       console.log("Current user id", currentUser); 
     Account.remove({id: currentUser._id});
@@ -270,8 +254,7 @@ function Account($http, $q, $auth, $http) {
         .signup(userData)
         .then(
           function onSuccess(response) {
-            $auth.setToken(response.data.token); // set token 
-              // console.log('Auth Token', response.data.token)
+            $auth.setToken(response.data.token); 
               console.log('User Data', userData); 
           },
 
@@ -289,8 +272,6 @@ function Account($http, $q, $auth, $http) {
         .then(
           function onSuccess(response) {
             $auth.setToken(response.data.token);
-              // console.log("Login Token ", response.data.token); 
-              // console.log("UserDataLogin ", userData); 
           },
 
           function onError(error) {
@@ -309,8 +290,7 @@ function Account($http, $q, $auth, $http) {
         self.user = null;
           console.log("User Id after logout ", self.user); 
           cb();
-    })
-    // returns a promise!!!
+    });
   }
 
   function currentUser() {
@@ -321,7 +301,6 @@ function Account($http, $q, $auth, $http) {
     getProfile().then(
       function onSuccess(response) {
         self.user = response.data;
-          // console.log("Current User right now is... ", self.user); 
         deferred.resolve(self.user);
       },
 
@@ -341,14 +320,12 @@ function Account($http, $q, $auth, $http) {
   }
 
   function updateProfile(profileData) {
-      console.log("profiledata", profileData);
     return (
       $http
         .put('/api/profile', profileData)
         .then(
           function (response) {
             self.user = response.data;
-              console.log("UPDATED info", self.user); 
           }
         )
     );
