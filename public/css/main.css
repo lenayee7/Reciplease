@@ -200,7 +200,6 @@ h1 {
 
 .navbar-right {
 	font-size: 1em;
-	/*margin-left: 85%;*/
 }
 
 .uploadcare-widget-button-open {
@@ -211,6 +210,29 @@ h1 {
 .uploadcare-widget-button-open:hover {
 	background-color: #9C1010;
 	width: 100%;
+}
+.col-sm-4 {
+	margin-bottom: 2%;
+}
+/*/////FOOTER/////*/
+
+.footer-div {
+	background-color: #99291D;
+}
+
+.footer-content {
+	color: #eee;
+	padding: 3% 0;
+	text-align: center;
+}
+
+.social-icons {
+	display: inline-block;
+	list-style: none;
+}
+
+ul {
+	padding-left: 0;
 }
 
 @media (max-width: 960px) {
